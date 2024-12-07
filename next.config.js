@@ -5,7 +5,13 @@
 /**
  * @type {import('next').NextConfig}
  **/
+
+const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
+  output: 'export',
+  images: {unoptimized: true},
+  //basePath: isProd ? '/ru.react.doc' : '',
+  basePath: '/ru.react.doc',
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
   reactStrictMode: true,
   experimental: {
