@@ -2,32 +2,31 @@
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
 
+import cn from 'classnames';
+import NextLink from 'next/link';
 import {
   createContext,
   memo,
-  useState,
-  useContext,
-  useId,
   Suspense,
+  useContext,
   useEffect,
+  useId,
   useRef,
+  useState,
   useTransition,
 } from 'react';
-import cn from 'classnames';
-import NextLink from 'next/link';
 
-import ButtonLink from '../ButtonLink';
-import {IconRestart} from '../Icon/IconRestart';
-import BlogCard from 'components/MDX/BlogCard';
+import {ExternalLink} from 'components/ExternalLink';
 import {IconChevron} from 'components/Icon/IconChevron';
 import {IconSearch} from 'components/Icon/IconSearch';
 import {Logo} from 'components/Logo';
-import Link from 'components/MDX/Link';
+import BlogCard from 'components/MDX/BlogCard';
 import CodeBlock from 'components/MDX/CodeBlock';
-import {ExternalLink} from 'components/ExternalLink';
-import sidebarBlog from '../../sidebarBlog.json';
-import * as React from 'react';
+import Link from 'components/MDX/Link';
 import Image from 'next/image';
+import sidebarBlog from '../../sidebarBlog.json';
+import ButtonLink from '../ButtonLink';
+import {IconRestart} from '../Icon/IconRestart';
 
 function Section({children, background = null}) {
   return (
@@ -158,7 +157,7 @@ export function HomeContent() {
           </div>
         </div>
 
-        <Section background="left-card">
+        {/* <Section background="left-card">
           <Center>
             <Header>Create user interfaces from components</Header>
             <Para>
@@ -522,7 +521,7 @@ export function HomeContent() {
               Get Started
             </ButtonLink>
           </div>
-        </Section>
+        </Section> */}
       </div>
     </>
   );
