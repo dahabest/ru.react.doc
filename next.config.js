@@ -8,6 +8,11 @@
 const nextConfig = {
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
   reactStrictMode: true,
+  output: 'export',
+  images: {
+    unoptimized: true, // Disable default image optimization
+  },
+  basePath: 'ru.react.doc',
   experimental: {
     // TODO: Remove after https://github.com/vercel/next.js/issues/49355 is fixed
     appDir: false,
