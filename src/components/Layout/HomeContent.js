@@ -157,7 +157,7 @@ export function HomeContent() {
           </div>
         </div>
 
-        {/* <Section background="left-card">
+        <Section background="left-card">
           <Center>
             <Header>Create user interfaces from components</Header>
             <Para>
@@ -521,7 +521,7 @@ export function HomeContent() {
               Get Started
             </ButtonLink>
           </div>
-        </Section> */}
+        </Section>
       </div>
     </>
   );
