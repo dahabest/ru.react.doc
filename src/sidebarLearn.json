@@ -56,44 +56,44 @@
       "sectionHeader": "LEARN REACT"
     },
     {
-      "title": "Describing the UI",
+      "title": "Описание UI",
       "tags": [],
       "path": "/learn/describing-the-ui",
       "routes": [
         {
-          "title": "Your First Component",
+          "title": "Ваш Первый Компонент",
           "path": "/learn/your-first-component"
         },
         {
-          "title": "Importing and Exporting Components",
+          "title": "Импорт и Экспорт Компонентов",
           "path": "/learn/importing-and-exporting-components"
         },
         {
-          "title": "Writing Markup with JSX",
+          "title": "Пишем разметку с помощью JSX",
           "path": "/learn/writing-markup-with-jsx"
         },
         {
-          "title": "JavaScript in JSX with Curly Braces",
+          "title": "JavaScript в JSX в фигурных скобках",
           "path": "/learn/javascript-in-jsx-with-curly-braces"
         },
         {
-          "title": "Passing Props to a Component",
+          "title": "Передача Пропсов Компоненту",
           "path": "/learn/passing-props-to-a-component"
         },
         {
-          "title": "Conditional Rendering",
+          "title": "Условный Рендеринг",
           "path": "/learn/conditional-rendering"
         },
         {
-          "title": "Rendering Lists",
+          "title": "Рендеринг Списков",
           "path": "/learn/rendering-lists"
         },
         {
-          "title": "Keeping Components Pure",
+          "title": "Поддержание Чистоты Компонентов",
           "path": "/learn/keeping-components-pure"
         },
         {
-          "title": "Your UI as a Tree",
+          "title": "Ваш UI как Дерево",
           "path": "/learn/understanding-your-ui-as-a-tree"
         }
       ]
