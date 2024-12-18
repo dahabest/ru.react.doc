@@ -1,5 +1,5 @@
 ---
-title: Passing Props to a Component
+title: Передача пропсов компоненту
 ---
 
 <Intro>

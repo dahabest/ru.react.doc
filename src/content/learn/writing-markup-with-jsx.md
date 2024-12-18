@@ -1,5 +1,5 @@
 ---
-title: Writing Markup with JSX
+title: Пишем разметку с помощью JSX
 ---
 
 <Intro>

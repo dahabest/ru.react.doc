@@ -1,5 +1,5 @@
 ---
-title: JavaScript in JSX with Curly Braces
+title: JavaScript в JSX в фигурных скобках
 ---
 
 <Intro>

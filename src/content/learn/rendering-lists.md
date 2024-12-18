@@ -1,5 +1,5 @@
 ---
-title: Rendering Lists
+title: Рендеринг списков
 ---
 
 <Intro>

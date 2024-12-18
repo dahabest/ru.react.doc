@@ -1,5 +1,5 @@
 ---
-title: Conditional Rendering
+title: Условный рендеринг
 ---
 
 <Intro>

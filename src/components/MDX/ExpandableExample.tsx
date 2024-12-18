@@ -71,13 +71,13 @@ function ExpandableExample({children, excerpt, type}: ExpandableExampleProps) {
           {isDeepDive && (
             <>
               <IconDeepDive className="inline me-2 dark:text-purple-30 text-purple-40" />
-              Deep Dive
+              Дополнительная информация
             </>
           )}
           {isExample && (
             <>
               <IconCodeBlock className="inline me-2 dark:text-yellow-30 text-yellow-50" />
-              Example
+              Пример
             </>
           )}
         </h5>
@@ -101,7 +101,7 @@ function ExpandableExample({children, excerpt, type}: ExpandableExampleProps) {
           <span className="me-1">
             <IconChevron displayDirection={isExpanded ? 'up' : 'down'} />
           </span>
-          {isExpanded ? 'Hide Details' : 'Show Details'}
+          {isExpanded ? 'Скрыть детали' : 'Показать детали'}
         </Button>
       </summary>
       <div

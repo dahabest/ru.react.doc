@@ -1,20 +1,39 @@
 ---
-title: Importing and Exporting Components
+title: Импорт и экспорт компонентов
 ---
 
 <Intro>
 
+Магия компонентов заключается в возможности их повторного использования: вы можете создавать компоненты, которые состоят из других компонентов. Но по мере того, как вы вкладываете все больше и больше компонентов, часто имеет смысл начать разбивать их на отдельные файлы. Что облегчит поиск файлов и переиспользование компонентов во многих местах.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 The magic of components lies in their reusability: you can create components that are composed of other components. But as you nest more and more components, it often makes sense to start splitting them into different files. This lets you keep your files easy to scan and reuse components in more places.
+
+</details>
 
 </Intro>
 
 <YouWillLearn>
+
+* Что такое файл с корневым компонентом
+* Как импортировать и экспортировать компонент
+* Когда использовать импорт и экспорт по умолчанию, а когда именованный 
+* Как импортировать и экспортировать несколько компонентов из одного файла
+* Как разделить компоненты на несколько файлов
+
+<details>
+<summary><small>(eng)</small></summary>
 
 * What a root component file is
 * How to import and export a component
 * When to use default and named imports and exports
 * How to import and export multiple components from one file
 * How to split components into multiple files
+
+</details>
+
 
 </YouWillLearn>
 

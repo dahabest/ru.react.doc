@@ -23,6 +23,8 @@ function addHeaderID(line, slugger) {
     return line;
   }
 
+  console.log(line);
+
   const match =
     /^(#+\s+)(.+?)(\s*\{(?:\/\*|#)([^\}\*\/]+)(?:\*\/)?\}\s*)?$/.exec(line);
   const before = match[1] + match[2];
@@ -39,6 +41,7 @@ function addHeaderID(line, slugger) {
       '` to be a heading, is it using a normal space after `#`?'
   );
   const autoId = head.data.id;
+  console.log({head});
   const existingId = match[4];
   const id = existingId || autoId;
   // Ignore numbers:

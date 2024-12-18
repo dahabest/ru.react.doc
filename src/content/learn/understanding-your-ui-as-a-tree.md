@@ -1,5 +1,5 @@
 ---
-title: Understanding Your UI as a Tree
+title: Ваш UI как дерево
 ---
 
 <Intro>

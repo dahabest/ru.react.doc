@@ -752,3 +752,21 @@ ol.mdx-illustration-block {
 .uwu .uwu-hidden {
   display: none;
 }
+
+p:has(+ details:not([class])) {
+  display: inline;
+}
+
+/* div:has(+ details) {
+  display: inline;
+} */
+
+details:not([class]) {
+  font-size: 0.7em;
+  display: inline;
+  padding-left: 5px;
+}
+summary:not([class]) {
+  cursor: pointer;
+  display: inline;
+}

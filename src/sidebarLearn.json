@@ -1,5 +1,5 @@
 {
-  "title": "Learn React",
+  "title": "Учим React",
   "path": "/learn",
   "routes": [
     {
@@ -61,11 +61,11 @@
       "path": "/learn/describing-the-ui",
       "routes": [
         {
-          "title": "Ваш Первый Компонент",
+          "title": "Ваш первый компонент",
           "path": "/learn/your-first-component"
         },
         {
-          "title": "Импорт и Экспорт Компонентов",
+          "title": "Импорт и экспорт компонентов",
           "path": "/learn/importing-and-exporting-components"
         },
         {
@@ -77,23 +77,23 @@
           "path": "/learn/javascript-in-jsx-with-curly-braces"
         },
         {
-          "title": "Передача Пропсов Компоненту",
+          "title": "Передача пропсов компоненту",
           "path": "/learn/passing-props-to-a-component"
         },
         {
-          "title": "Условный Рендеринг",
+          "title": "Условный рендеринг",
           "path": "/learn/conditional-rendering"
         },
         {
-          "title": "Рендеринг Списков",
+          "title": "Рендеринг списков",
           "path": "/learn/rendering-lists"
         },
         {
-          "title": "Поддержание Чистоты Компонентов",
+          "title": "Поддержание чистоты компонентов",
           "path": "/learn/keeping-components-pure"
         },
         {
-          "title": "Ваш UI как Дерево",
+          "title": "Ваш UI как дерево",
           "path": "/learn/understanding-your-ui-as-a-tree"
         }
       ]
