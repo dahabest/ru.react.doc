@@ -439,9 +439,9 @@ export default function TopNav({
                 </Suspense>
                 <div className="h-16" />
               </nav>
-              <div className="fixed bottom-0 hidden lg:block">
+              {/* <div className="fixed bottom-0 hidden lg:block">
                 <Feedback />
-              </div>
+              </div> */}
             </aside>
           </div>
         )}
