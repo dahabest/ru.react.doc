@@ -4,21 +4,44 @@ title: Условный рендеринг
 
 <Intro>
 
+Ваши компоненты часто должны отображать разные вещи в зависимости от различных условий. В React вы можете условно рендерить JSX, используя синтаксис JavaScript, например, операторы `if`, `&&` и `? :`.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Your components will often need to display different things depending on different conditions. In React, you can conditionally render JSX using JavaScript syntax like `if` statements, `&&`, and `? :` operators.
+
+</details>
 
 </Intro>
 
 <YouWillLearn>
 
+* Как возвращать разные JSX в зависимости от условия
+* Как условно включить или исключить фрагмент JSX
+* Общие сокращения условного синтаксиса, которые вы можете встретить в коде React
+
+<details>
+<summary><small>(eng)</small></summary>
+
 * How to return different JSX depending on a condition
 * How to conditionally include or exclude a piece of JSX
 * Common conditional syntax shortcuts you’ll encounter in React codebases
 
+</details>
+
 </YouWillLearn>
 
-## Conditionally returning JSX {/*conditionally-returning-jsx*/}
+## Условное возвращение JSX {/*conditionally-returning-jsx*/}
+
+Допустим, у вас есть компонент `PackingList`, отображающий несколько `Item`, которые могут быть помечены как упакованные или нет:
+
+<details>
+<summary><small>(eng)</small></summary>
 
 Let’s say you have a `PackingList` component rendering several `Item`s, which can be marked as packed or not:
+
+</details>
 
 <Sandpack>
 
@@ -52,9 +75,9 @@ export default function PackingList() {
 
 </Sandpack>
 
-Notice that some of the `Item` components have their `isPacked` prop set to `true` instead of `false`. You want to add a checkmark (✅) to packed items if `isPacked={true}`.
+Обратите внимание, что для некоторых компонентов `Item` параметр `isPacked` установлен в значение `true`, а не `false`. Вы хотите добавить галочку (✅) к упакованным элементам, если `isPacked={true}`.
 
-You can write this as an [`if`/`else` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) like so:
+Это можно записать в виде оператора [`if`/`else`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else), например, так:
 
 ```js
 if (isPacked) {
@@ -63,7 +86,18 @@ if (isPacked) {
 return <li className="item">{name}</li>;
 ```
 
+Если параметр `isPacked` равен `true`, этот код **возвращает другое JSX-дерево.** С этим изменением некоторые элементы получают галочку в конце:
+
+<details>
+<summary><small>(eng)</small></summary>
+
+Notice that some of the `Item` components have their `isPacked` prop set to `true` instead of `false`. You want to add a checkmark (✅) to packed items if `isPacked={true}`.
+
+You can write this as an [`if`/`else` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) like so:
+
 If the `isPacked` prop is `true`, this code **returns a different JSX tree.** With this change, some of the items get a checkmark at the end:
+
+</details>
 
 <Sandpack>
 
@@ -100,13 +134,29 @@ export default function PackingList() {
 
 </Sandpack>
 
+Попробуйте изменить то, что возвращается в обоих случаях, и посмотрите, как изменится результат!
+
+Обратите внимание, как вы создаете разветвленную логику с помощью операторов JavaScript `if` и `return`. В React поток управления (как и условия) обрабатывается JavaScript.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Try editing what gets returned in either case, and see how the result changes!
 
 Notice how you're creating branching logic with JavaScript's `if` and `return` statements. In React, control flow (like conditions) is handled by JavaScript.
 
-### Conditionally returning nothing with `null` {/*conditionally-returning-nothing-with-null*/}
+</details>
+
+### Условное возвращение ничего с помощью `null` {/*conditionally-returning-nothing-with-null*/}
+
+В некоторых ситуациях вам вообще не захочется ничего рендерить. Например, предположим, что вы вообще не хотите показывать упакованные элементы. Компонент должен что-то возвращать. В этом случае вы можете вернуть значение `null`:
+
+<details>
+<summary><small>(eng)</small></summary>
 
 In some situations, you won't want to render anything at all. For example, say you don't want to show packed items at all. A component must return something. In this case, you can return `null`:
+
+</details>
 
 ```js
 if (isPacked) {
@@ -115,7 +165,14 @@ if (isPacked) {
 return <li className="item">{name}</li>;
 ```
 
+Если значение `isPacked` равно true, компонент ничего не вернет, `null`. В противном случае он вернет JSX для рендеринга.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 If `isPacked` is true, the component will return nothing, `null`. Otherwise, it will return JSX to render.
+
+</details>
 
 <Sandpack>
 
@@ -152,23 +209,30 @@ export default function PackingList() {
 
 </Sandpack>
 
+На практике возврат `null` из компонента встречается нечасто, поскольку это может удивить разработчика, пытающегося его отобразить. Чаще всего нужно условно включать или исключать компонент в JSX родительского компонента. Вот как это сделать!
+
+<details>
+<summary><small>(eng)</small></summary>
+
 In practice, returning `null` from a component isn't common because it might surprise a developer trying to render it. More often, you would conditionally include or exclude the component in the parent component's JSX. Here's how to do that!
 
-## Conditionally including JSX {/*conditionally-including-jsx*/}
+</details>
 
-In the previous example, you controlled which (if any!) JSX tree would be returned by the component. You may already have noticed some duplication in the render output:
+
+## Условное включение JSX {/*conditionally-including-jsx*/}
+
+В предыдущем примере вы контролировали, какое дерево JSX будет возвращено компонентом (если вообще будет!). Возможно, вы уже заметили дублирование в результате рендера:
 
 ```js
 <li className="item">{name} ✅</li>
 ```
-
-is very similar to
+практически то же самое, что и:
 
 ```js
 <li className="item">{name}</li>
 ```
 
-Both of the conditional branches return `<li className="item">...</li>`:
+Обе условные ветви возвращают `<li className=«item»>...</li>`:
 
 ```js
 if (isPacked) {
@@ -177,7 +241,21 @@ if (isPacked) {
 return <li className="item">{name}</li>;
 ```
 
+Хотя такое дублирование не вредно, оно может усложнить сопровождение вашего кода. Что, если вы захотите изменить `className`? Вам придется делать это в двух местах вашего кода! В такой ситуации вы можете условно включить небольшой JSX, чтобы сделать ваш код более [DRY.](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+
+<details>
+<summary><small>(eng)</small></summary>
+
+In the previous example, you controlled which (if any!) JSX tree would be returned by the component. You may already have noticed some duplication in the render output:
+
+is very similar to
+
+Both of the conditional branches return `<li className="item">...</li>`:
+
 While this duplication isn't harmful, it could make your code harder to maintain. What if you want to change the `className`? You'd have to do it in two places in your code! In such a situation, you could conditionally include a little JSX to make your code more [DRY.](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+
+</details>
+
 
 ### Conditional (ternary) operator (`? :`) {/*conditional-ternary-operator--*/}
 
