@@ -94,7 +94,7 @@ export function Challenge({
             )}
             onClick={handleClickNextChallenge}
             active>
-            Next {isRecipes ? 'Example' : 'Challenge'}
+            {isRecipes ? 'Следующий пример' : 'Следующее задание'}
             <IconArrowSmall displayDirection="end" className="block ms-1.5" />
           </Button>
         )}
