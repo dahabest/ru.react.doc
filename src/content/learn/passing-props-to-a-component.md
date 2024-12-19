@@ -4,11 +4,27 @@ title: Передача пропсов компоненту
 
 <Intro>
 
+Компоненты React используют *пропсы* для взаимодействия друг с другом. Каждый родительский компонент может передать некоторую информацию своим дочерним компонентам, передавая им параметры. Параметры могут напомнить вам об атрибутах HTML, но через них можно передавать любые значения JavaScript, включая объекты, массивы и функции.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 React components use *props* to communicate with each other. Every parent component can pass some information to its child components by giving them props. Props might remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, and functions.
+
+</details>
 
 </Intro>
 
 <YouWillLearn>
+
+* Как передать параметры компоненту
+* Как читать параметры из компонента
+* Как указать значения по умолчанию для параметров
+* Как передать JSX компоненту
+* Как параметры изменяются со временем
+
+<details>
+<summary><small>(eng)</small></summary>
 
 * How to pass props to a component
 * How to read props from a component
@@ -16,11 +32,20 @@ React components use *props* to communicate with each other. Every parent compon
 * How to pass some JSX to a component
 * How props change over time
 
+</details>
+
 </YouWillLearn>
 
-## Familiar props {/*familiar-props*/}
+## Знакомые параметры {/*familiar-props*/}
+
+Параметры - это информация, которую вы передаете в JSX-тег. Например, `className`, `src`, `alt`, `width` и `height` - это некоторые параметры, которые вы можете передать тегу `<img>`:
+
+<details>
+<summary><small>(eng)</small></summary>
 
 Props are the information that you pass to a JSX tag. For example, `className`, `src`, `alt`, `width`, and `height` are some of the props you can pass to an `<img>`:
+
+</details>
 
 <Sandpack>
 
@@ -51,11 +76,25 @@ body { min-height: 120px; }
 
 </Sandpack>
 
+Параметры, которые вы можете передать тегу `<img>`, предопределены (ReactDOM соответствует [стандарту HTML](https://www.w3.org/TR/html52/semantics-embedded-content.html#the-img-element)). Но вы можете передавать любые параметры *своим* компонентам, например `<Avatar>`, чтобы настроить их. Вот как!
+
+<details>
+<summary><small>(eng)</small></summary>
+
 The props you can pass to an `<img>` tag are predefined (ReactDOM conforms to [the HTML standard](https://www.w3.org/TR/html52/semantics-embedded-content.html#the-img-element)). But you can pass any props to *your own* components, such as `<Avatar>`, to customize them. Here's how!
 
-## Passing props to a component {/*passing-props-to-a-component*/}
+</details>
+
+## Передача параметров компоненту {/*passing-props-to-a-component*/}
+
+В этом коде компонент `Profile` не передает никаких параметров своему дочернему компоненту `Avatar`:
+
+<details>
+<summary><small>(eng)</small></summary>
 
 In this code, the `Profile` component isn't passing any props to its child component, `Avatar`:
+
+</details>
 
 ```js
 export default function Profile() {
@@ -65,11 +104,25 @@ export default function Profile() {
 }
 ```
 
+Вы можете придать `Аватару` некоторые параметры в два этапа.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 You can give `Avatar` some props in two steps.
 
-### Step 1: Pass props to the child component {/*step-1-pass-props-to-the-child-component*/}
+</details>
+
+### Step 1: Передача параметров дочернему компоненту {/*step-1-pass-props-to-the-child-component*/}
+
+Сначала передайте `Avatar` некоторые параметры. Например, передадим два параметра: `person` (объект) и `Size` (число):
+
+<details>
+<summary><small>(eng)</small></summary>
 
 First, pass some props to `Avatar`. For example, let's pass two props: `person` (an object), and `size` (a number):
+
+</details>
 
 ```js
 export default function Profile() {
@@ -82,17 +135,29 @@ export default function Profile() {
 }
 ```
 
-<Note>
+Если двойные фигурные скобки после `person=` вас смущают, вспомните [они просто объект](/learn/javascript-in-jsx-with-curly-braces#using-double-curlies-css-and-other-objects-in-jsx) внутри JSX-скобок.
+
+<Note> Теперь вы можете прочитать эти параметры внутри компонента `Avatar`.</Note>
+
+<details>
+<summary><small>(eng)</small></summary>
 
 If double curly braces after `person=` confuse you, recall [they're merely an object](/learn/javascript-in-jsx-with-curly-braces#using-double-curlies-css-and-other-objects-in-jsx) inside the JSX curlies.
 
-</Note>
+<Note>Now you can read these props inside the `Avatar` component.</Note>
 
-Now you can read these props inside the `Avatar` component.
+</details>
 
-### Step 2: Read props inside the child component {/*step-2-read-props-inside-the-child-component*/}
+### Шаг 2: Чтение параметров внутри дочернего компонента {/*step-2-read-props-inside-the-child-component*/}
+
+Вы можете прочитать эти параметры, перечислив их имена `person, size` через запятую внутри `({` и `})` непосредственно после `функции Avatar`. Это позволит вам использовать их внутри кода `Avatar`, как вы бы сделали это с переменной.
+
+<details>
+<summary><small>(eng)</small></summary>
 
 You can read these props by listing their names `person, size` separated by the commas inside `({` and `})` directly after `function Avatar`. This lets you use them inside the `Avatar` code, like you would with a variable.
+
+</details>
 
 ```js
 function Avatar({ person, size }) {
@@ -100,9 +165,17 @@ function Avatar({ person, size }) {
 }
 ```
 
-Add some logic to `Avatar` that uses the `person` and `size` props for rendering, and you're done.
+Добавьте в `Avatar` логику, которая использует параметры `person` и ``size` для рендеринга, и все готово.
 
+Теперь вы можете настроить `Avatar` на рендеринг различными способами с разными параметрами. Попробуйте изменить значения!
+
+<details>
+<summary><small>(eng)</small></summary>
+
+Add some logic to `Avatar` that uses the `person` and `size` props for rendering, and you're done.
 Now you can configure `Avatar` to render in many different ways with different props. Try tweaking the values!
+
+</details>
 
 <Sandpack>
 
@@ -168,9 +241,18 @@ body { min-height: 120px; }
 
 </Sandpack>
 
+Параметры позволяют вам думать о родительских и дочерних компонентах независимо друг от друга. Например, вы можете изменить параметры `person` или `size` внутри `Profile`, не задумываясь о том, как их использует `Avatar`. Аналогично, вы можете изменить то, как `Avatar` использует эти параметры, не заглядывая в `Profile`.
+
+Вы можете думать о параметрах как о «ручках», которые можно регулировать. Они выполняют ту же роль, что и аргументы в функциях - фактически, параметры _являются_ единственным аргументом вашего компонента! Функции компонентов React принимают единственный аргумент - объект `props`:
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Props let you think about parent and child components independently. For example, you can change the `person` or the `size` props inside `Profile` without having to think about how `Avatar` uses them. Similarly, you can change how the `Avatar` uses these props, without looking at the `Profile`.
 
 You can think of props like "knobs" that you can adjust. They serve the same role as arguments serve for functions—in fact, props _are_ the only argument to your component! React component functions accept a single argument, a `props` object:
+
+</details>
 
 ```js
 function Avatar(props) {
@@ -180,11 +262,19 @@ function Avatar(props) {
 }
 ```
 
+Обычно вам не нужен весь объект `props`, поэтому вы деструктурируете его на отдельные параметры.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Usually you don't need the whole `props` object itself, so you destructure it into individual props.
+
+</details>
 
 <Pitfall>
 
-**Don't miss the pair of `{` and `}` curlies** inside of `(` and `)` when declaring props:
+**Не пропустите пару символов `{` и `}`** внутри ``(`` и ``)`` при объявлении параметров:
+
 
 ```js
 function Avatar({ person, size }) {
@@ -192,7 +282,16 @@ function Avatar({ person, size }) {
 }
 ```
 
+Этот синтаксис называется [«деструктуризацией»](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Unpacking_fields_from_objects_passed_as_a_function_parameter) и эквивалентен чтению свойств из параметра функции:
+
+<details>
+<summary><small>(eng)</small></summary>
+
+**Don't miss the pair of `{` and `}` curlies** inside of `(` and `)` when declaring props:
+
 This syntax is called ["destructuring"](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Unpacking_fields_from_objects_passed_as_a_function_parameter) and is equivalent to reading properties from a function parameter:
+
+</details>
 
 ```js
 function Avatar(props) {
@@ -204,9 +303,16 @@ function Avatar(props) {
 
 </Pitfall>
 
-## Specifying a default value for a prop {/*specifying-a-default-value-for-a-prop*/}
+## Указание значения по умолчанию для параметра {/*specifying-a-default-value-for-a-prop*/}
+
+Если вы хотите дать параметру значение по умолчанию, чтобы он мог вернуться к нему, когда значение не указано, вы можете сделать это с помощью деструктуризации, поместив `=` и значение по умолчанию сразу после параметра:
+
+<details>
+<summary><small>(eng)</small></summary>
 
 If you want to give a prop a default value to fall back on when no value is specified, you can do it with the destructuring by putting `=` and the default value right after the parameter:
+
+</details>
 
 ```js
 function Avatar({ person, size = 100 }) {
@@ -214,13 +320,29 @@ function Avatar({ person, size = 100 }) {
 }
 ```
 
+Теперь, если `<Avatar person={...} />` рендерится без параметра `size`, то `size` будет установлен на `100`.
+
+Значение по умолчанию используется только в том случае, если параметр `size` отсутствует или если вы передали `size={undefined}`. Если же вы передадите `size={null}` или `size={0}`, значение по умолчанию **не** будет использоваться.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Now, if `<Avatar person={...} />` is rendered with no `size` prop, the `size` will be set to `100`.
 
 The default value is only used if the `size` prop is missing or if you pass `size={undefined}`. But if you pass `size={null}` or `size={0}`, the default value will **not** be used.
 
-## Forwarding props with the JSX spread syntax {/*forwarding-props-with-the-jsx-spread-syntax*/}
+</details>
+
+## Пересылка параметров с помощью синтаксиса расширения JSX {/*forwarding-props-with-the-jsx-spread-syntax*/}
+
+Иногда передача параметров становится слишком повторяющейся:
+
+<details>
+<summary><small>(eng)</small></summary>
 
 Sometimes, passing props gets very repetitive:
+
+</details>
 
 ```js
 function Profile({ person, size, isSepia, thickBorder }) {
@@ -237,7 +359,14 @@ function Profile({ person, size, isSepia, thickBorder }) {
 }
 ```
 
+Нет ничего плохого в повторяющемся коде - он может быть более разборчивым. Но иногда вам может быть важна краткость. Некоторые компоненты передают все свои параметры своим дочерним компонентам, например, как этот `Profile` делает это с `Avatar`. Поскольку они не используют параметры напрямую, имеет смысл использовать более лаконичный синтаксис «распространения»:
+
+<details>
+<summary><small>(eng)</small></summary>
+
 There's nothing wrong with repetitive code—it can be more legible. But at times you may value conciseness. Some components forward all of their props to their children, like how this `Profile` does with `Avatar`. Because they don't use any of their props directly, it can make sense to use a more concise "spread" syntax:
+
+</details>
 
 ```js
 function Profile(props) {
@@ -249,13 +378,22 @@ function Profile(props) {
 }
 ```
 
+Это пересылает все параметры `Profile` в `Avatar` без перечисления их имен.
+
+**Используйте синтаксис spread сдержанно.** Если вы используете этот синтаксис в каждом компоненте, значит, что-то не так. Часто это указывает на то, что вам следует разделить компоненты и передавать дочерние компоненты в виде JSX. Подробнее об этом в следующем выпуске!
+
+<details>
+<summary><small>(eng)</small></summary>
+
 This forwards all of `Profile`'s props to the `Avatar` without listing each of their names.
 
 **Use spread syntax with restraint.** If you're using it in every other component, something is wrong. Often, it indicates that you should split your components and pass children as JSX. More on that next!
 
-## Passing JSX as children {/*passing-jsx-as-children*/}
+</details>
 
-It is common to nest built-in browser tags:
+## Передача JSX в качестве дочерних элементов {/*passing-jsx-as-children*/}
+
+Часто встречается вложение встроенных тегов браузера:
 
 ```js
 <div>
@@ -263,7 +401,7 @@ It is common to nest built-in browser tags:
 </div>
 ```
 
-Sometimes you'll want to nest your own components the same way:
+Иногда вам потребуется вложить свои собственные компоненты таким же образом:
 
 ```js
 <Card>
@@ -271,7 +409,18 @@ Sometimes you'll want to nest your own components the same way:
 </Card>
 ```
 
+Когда вы вкладываете содержимое в JSX-тег, родительский компонент получит его в параметре `children`. Например, компонент `Card` ниже получит параметр `children`, установленный на `<Avatar />`, и отобразит его в div-обертке:
+
+<details>
+<summary><small>(eng)</small></summary>
+
+It is common to nest built-in browser tags:
+
+Sometimes you'll want to nest your own components the same way:
+
 When you nest content inside a JSX tag, the parent component will receive that content in a prop called `children`. For example, the `Card` component below will receive a `children` prop set to `<Avatar />` and render it in a wrapper div:
+
+</details>
 
 <Sandpack>
 
@@ -347,17 +496,35 @@ export function getImageUrl(person, size = 's') {
 
 </Sandpack>
 
+Попробуйте заменить `<Avatar>` внутри `<Card>` на текст, чтобы увидеть, как компонент `Card` может обернуть любое вложенное содержимое. Ему не нужно «знать», что отображается внутри него. Вы увидите этот гибкий паттерн во многих местах.
+
+Компонент с параметром `children` можно представить как имеющий «дыру», которая может быть «заполнена» его родительскими компонентами с помощью произвольного JSX. Вы часто будете использовать параметр `children` для визуальных оберток: панелей, сеток и т. д.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Try replacing the `<Avatar>` inside `<Card>` with some text to see how the `Card` component can wrap any nested content. It doesn't need to "know" what's being rendered inside of it. You will see this flexible pattern in many places.
 
 You can think of a component with a `children` prop as having a "hole" that can be "filled in" by its parent components with arbitrary JSX. You will often use the `children` prop for visual wrappers: panels, grids, etc.
 
+</details>
+
 <Illustration src="/images/docs/illustrations/i_children-prop.png" alt='A puzzle-like Card tile with a slot for "children" pieces like text and Avatar' />
 
-## How props change over time {/*how-props-change-over-time*/}
+## Как изменяются параметры с течением времени {/*how-props-change-over-time*/}
+
+Компонент `Clock`, представленный ниже, получает два параметра от своего родительского компонента: `color` и `time`. (Код родительского компонента опущен, поскольку он использует [state](/learn/state-a-components-memory), в который мы пока не будем углубляться).
+
+Попробуйте изменить цвет в поле выбора ниже:
+
+<details>
+<summary><small>(eng)</small></summary>
 
 The `Clock` component below receives two props from its parent component: `color` and `time`. (The parent component's code is omitted because it uses [state](/learn/state-a-components-memory), which we won't dive into just yet.)
 
 Try changing the color in the select box below:
+
+</details>
 
 <Sandpack>
 
@@ -407,13 +574,36 @@ export default function App() {
 
 </Sandpack>
 
+Этот пример иллюстрирует, что **компонент может получать различные параметры с течением времени.** Параметры не всегда статичны! Здесь реквизит `time` меняется каждую секунду, а реквизит `color` меняется, когда вы выбираете другой цвет. Параметры отражают данные компонента в любой момент времени, а не только в начале.
+
+Однако параметры являются [неизменяемыми](https://en.wikipedia.org/wiki/Immutable_object)- термин из информатики, означающий «неизменный». Когда компоненту нужно изменить свои параметры (например, в ответ на взаимодействие с пользователем или новые данные), он должен «попросить» свой родительский компонент передать ему _другие параметры_ - новый объект! Старые параметры будут отброшены, и в конечном итоге движок JavaScript вернет себе память, которую они занимали.
+
+**Не пытайтесь «менять параметры».** Когда вам нужно будет реагировать на ввод пользователя (например, менять выбранный цвет), вам нужно будет «установить состояние», о чем вы можете узнать в [Состояние: Память компонента.](/learn/state-a-components-memory).
+
+
+<details>
+<summary><small>(eng)</small></summary>
+
 This example illustrates that **a component may receive different props over time.** Props are not always static! Here, the `time` prop changes every second, and the `color` prop changes when you select another color. Props reflect a component's data at any point in time, rather than only in the beginning.
 
 However, props are [immutable](https://en.wikipedia.org/wiki/Immutable_object)—a term from computer science meaning "unchangeable". When a component needs to change its props (for example, in response to a user interaction or new data), it will have to "ask" its parent component to pass it _different props_—a new object! Its old props will then be cast aside, and eventually the JavaScript engine will reclaim the memory taken by them.
 
 **Don't try to "change props".** When you need to respond to the user input (like changing the selected color), you will need to "set state", which you can learn about in [State: A Component's Memory.](/learn/state-a-components-memory)
 
+</details>
+
 <Recap>
+
+* Чтобы передать параметры, добавьте их в JSX, как в случае с HTML-атрибутами.
+* Чтобы прочитать параметры, используйте синтаксис деструктуризации `function Avatar({ person, size })`.
+* Вы можете указать значение по умолчанию, например ``размер = 100``, которое используется для отсутствующих и ``undefined`` параметров.
+* Вы можете переслать все параметры с помощью `<Avatar {...props} />` Синтаксис расширения JSX, но не злоупотребляйте им!
+* Вложенный JSX типа `<Card><Avatar /></Card>` будет отображаться как `children` параметр компонента `Card`.
+* Параметры - это снимки(фиксация положения) на определенный момент времени, доступные только для чтения: каждый рендер получает новую версию параметров.
+* Вы не можете изменять параметры. Когда вам понадобится интерактивность, вам нужно будет установить состояние.
+
+<details>
+<summary><small>(eng)</small></summary>
 
 * To pass props, add them to the JSX, just like you would with HTML attributes.
 * To read props, use the `function Avatar({ person, size })` destructuring syntax.
@@ -423,15 +613,22 @@ However, props are [immutable](https://en.wikipedia.org/wiki/Immutable_object)�
 * Props are read-only snapshots in time: every render receives a new version of props.
 * You can't change props. When you need interactivity, you'll need to set state.
 
+</details>
+
 </Recap>
-
-
 
 <Challenges>
 
-#### Extract a component {/*extract-a-component*/}
+#### Извлеките компонент {/*extract-a-component*/}
+
+Этот компонент `Gallery` содержит очень похожую разметку для двух профилей. Извлеките из него компонент `Profile`, чтобы уменьшить дублирование. Вам нужно будет выбрать, какие параметры ему передавать.
+
+<details>
+<summary><small>(eng)</small></summary>
 
 This `Gallery` component contains some very similar markup for two profiles. Extract a `Profile` component out of it to reduce the duplication. You'll need to choose what props to pass to it.
+
+</details>
 
 <Sandpack>
 
@@ -524,15 +721,31 @@ li { margin: 5px; }
 
 <Hint>
 
+Начните с извлечения разметки для одного из ученых. Затем найдите части, которые не соответствуют ему во втором примере, и сделайте их настраиваемыми с помощью параметров.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Start by extracting the markup for one of the scientists. Then find the pieces that don't match it in the second example, and make them configurable by props.
+
+</details>
 
 </Hint>
 
 <Solution>
 
+В этом решении компонент `Profile` принимает несколько параметров: `imageId` (строка), `name` (строка), `profession` (строка), `awards` (массив строк), `discovery` (строка) и `imageSize` (число).
+
+Обратите внимание, что параметр `imageSize` имеет значение по умолчанию, поэтому мы не передаем его компоненту.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 In this solution, the `Profile` component accepts multiple props: `imageId` (a string), `name` (a string), `profession` (a string), `awards` (an array of strings), `discovery` (a string), and `imageSize` (a number).
 
 Note that the `imageSize` prop has a default value, which is why we don't pass it to the component.
+
+</details>
 
 <Sandpack>
 
@@ -630,9 +843,18 @@ li { margin: 5px; }
 
 </Sandpack>
 
+Обратите внимание, что вам не нужен отдельный параметр `awardCount`, если `awards` - это массив. Тогда вы можете использовать `awards.length` для подсчета количества наград. Помните, что параметры могут принимать любые значения, в том числе и массивы!
+
+Другое решение, более похожее на предыдущие примеры на этой странице, заключается в том, чтобы сгруппировать всю информацию о человеке в одном объекте и передать этот объект как один параметр:
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Note how you don't need a separate `awardCount` prop if `awards` is an array. Then you can use `awards.length` to count the number of awards. Remember that props can take any values, and that includes arrays too!
 
 Another solution, which is more similar to the earlier examples on this page, is to group all information about a person in a single object, and pass that object as one prop:
+
+</details>
 
 <Sandpack>
 
@@ -727,15 +949,31 @@ li { margin: 5px; }
 
 </Sandpack>
 
+Хотя синтаксис выглядит несколько иначе, поскольку вы описываете свойства объекта JavaScript, а не коллекцию атрибутов JSX, эти примеры в основном эквивалентны, и вы можете выбрать любой подход.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Although the syntax looks slightly different because you're describing properties of a JavaScript object rather than a collection of JSX attributes, these examples are mostly equivalent, and you can pick either approach.
+
+</details>
 
 </Solution>
 
-#### Adjust the image size based on a prop {/*adjust-the-image-size-based-on-a-prop*/}
+#### Настройка размера изображения в зависимости от параметров {/*adjust-the-image-size-based-on-a-prop*/}
+
+В этом примере `Avatar` получает числовой параметр `size`, который определяет ширину и высоту `<img>`. В данном примере параметр `size` установлен в значение `40`. Однако, если вы откроете изображение в новой вкладке, то заметите, что само изображение больше (`160` пикселей). Реальный размер изображения определяется тем, какой размер миниатюры вы запрашиваете.
+
+Измените компонент `Avatar`, чтобы он запрашивал наиболее близкий размер изображения на основе параметра `size`. В частности, если `size` меньше `90`, передавайте в функцию `getImageUrl` значение `'s'` («small»), а не `'b'` («big»). Убедитесь, что изменения работают, отобразив аватары с разными значениями параметра ``размер`` и открыв изображения в новой вкладке.
+
+<details>
+<summary><small>(eng)</small></summary>
 
 In this example, `Avatar` receives a numeric `size` prop which determines the `<img>` width and height. The `size` prop is set to `40` in this example. However, if you open the image in a new tab, you'll notice that the image itself is larger (`160` pixels). The real image size is determined by which thumbnail size you're requesting.
 
 Change the `Avatar` component to request the closest image size based on the `size` prop. Specifically, if the `size` is less than `90`, pass `'s'` ("small") rather than `'b'` ("big") to the `getImageUrl` function. Verify that your changes work by rendering avatars with different values of the `size` prop and opening images in a new tab.
+
+</details>
 
 <Sandpack>
 
@@ -848,7 +1086,14 @@ export function getImageUrl(person, size) {
 
 </Sandpack>
 
+Вы также можете показать более четкое изображение для экранов с высоким DPI, принимая во внимание [`window.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio):
+
+<details>
+<summary><small>(eng)</small></summary>
+
 You could also show a sharper image for high DPI screens by taking [`window.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio) into account:
+
+</details>
 
 <Sandpack>
 
@@ -919,13 +1164,27 @@ export function getImageUrl(person, size) {
 
 </Sandpack>
 
+Параметры позволяют инкапсулировать подобную логику внутри компонента `Avatar` (и изменить ее позже, если потребуется), чтобы каждый мог использовать компонент `<Avatar>`, не задумываясь о том, как запрашиваются и изменяются размеры изображений.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Props let you encapsulate logic like this inside the `Avatar` component (and change it later if needed) so that everyone can use the `<Avatar>` component without thinking about how the images are requested and resized.
+
+</details>
 
 </Solution>
 
-#### Passing JSX in a `children` prop {/*passing-jsx-in-a-children-prop*/}
+#### Передача JSX в параметры `children` {/*passing-jsx-in-a-children-prop*/}
+
+Извлеките компонент `Card` из приведенной ниже разметки и используйте параметр `children` для передачи ему различных JSX:
+
+<details>
+<summary><small>(eng)</small></summary>
 
 Extract a `Card` component from the markup below, and use the `children` prop to pass different JSX to it:
+
+</details>
 
 <Sandpack>
 
@@ -983,13 +1242,27 @@ h1 {
 
 <Hint>
 
+Любой JSX, который вы поместите внутрь тега компонента, будет передан в качестве параметра `children` этому компоненту.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Any JSX you put inside of a component's tag will be passed as the `children` prop to that component.
+
+</details>
 
 </Hint>
 
 <Solution>
 
+Таким образом, вы можете использовать компонент `Card` в обоих местах:
+
+<details>
+<summary><small>(eng)</small></summary>
+
 This is how you can use the `Card` component in both places:
+
+</details>
 
 <Sandpack>
 
@@ -1051,7 +1324,14 @@ h1 {
 
 </Sandpack>
 
+Вы также можете сделать `title` отдельным параметром, если хотите, чтобы каждая `Card` всегда имела заголовок:
+
+<details>
+<summary><small>(eng)</small></summary>
+
 You can also make `title` a separate prop if you want every `Card` to always have a title:
+
+</details>
 
 <Sandpack>
 
