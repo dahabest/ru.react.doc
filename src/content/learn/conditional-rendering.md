@@ -257,11 +257,11 @@ While this duplication isn't harmful, it could make your code harder to maintain
 </details>
 
 
-### Conditional (ternary) operator (`? :`) {/*conditional-ternary-operator--*/}
+### Условный (тернарный) оператор (`? :`) {/*conditional-ternary-operator--*/}
 
-JavaScript has a compact syntax for writing a conditional expression -- the [conditional operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) or "ternary operator".
+В JavaScript есть компактный синтаксис для записи условного выражения - [условный оператор](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) или «тернарный оператор».
 
-Instead of this:
+Вместо этого:
 
 ```js
 if (isPacked) {
@@ -269,8 +269,7 @@ if (isPacked) {
 }
 return <li className="item">{name}</li>;
 ```
-
-You can write this:
+Вы можете писать так:
 
 ```js
 return (
@@ -280,17 +279,44 @@ return (
 );
 ```
 
+Вы можете прочитать это как *«если `isPacked` истинно, то (`?`) вывести `name + „ ✅“`, иначе (`:`) вывести `name`»*.
+
+<details>
+<summary><small>(eng)</small></summary>
+
+JavaScript has a compact syntax for writing a conditional expression -- the [conditional operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) or "ternary operator".
+
+Instead of this:
+You can write this:
+
 You can read it as *"if `isPacked` is true, then (`?`) render `name + ' ✅'`, otherwise (`:`) render `name`"*.
+
+</details>
 
 <DeepDive>
 
-#### Are these two examples fully equivalent? {/*are-these-two-examples-fully-equivalent*/}
+#### Являются ли эти два примера полностью эквивалентными? {/*are-these-two-examples-fully-equivalent*/}
+
+Если вы знакомы с объектно-ориентированным программированием, вы можете предположить, что два приведенных выше примера мало чем отличаются друг от друга, поскольку в одном из них могут быть созданы два разных «экземпляра» `<li>`. Но элементы JSX не являются «экземплярами», потому что они не хранят никакого внутреннего состояния и не являются реальными узлами DOM. Это легкие описания, как чертежи. Так что эти два примера, на самом деле, *совершенно эквивалентны*. В [Preserving and Resetting State](/learn/preserving-and-resetting-state) подробно рассказывается о том, как это работает.
+
+<details>
+<summary><small>(eng)</small></summary>
 
 If you're coming from an object-oriented programming background, you might assume that the two examples above are subtly different because one of them may create two different "instances" of `<li>`. But JSX elements aren't "instances" because they don't hold any internal state and aren't real DOM nodes. They're lightweight descriptions, like blueprints. So these two examples, in fact, *are* completely equivalent. [Preserving and Resetting State](/learn/preserving-and-resetting-state) goes into detail about how this works.
 
+</details>
+
+
 </DeepDive>
 
+Теперь предположим, что вы хотите обернуть текст завершенного элемента в другой HTML-тег, например `<del>`, чтобы вычеркнуть его. Вы можете добавить еще больше новых строк и круглых скобок, чтобы было проще вложить больше JSX в каждом из случаев:
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Now let's say you want to wrap the completed item's text into another HTML tag, like `<del>` to strike it out. You can add even more newlines and parentheses so that it's easier to nest more JSX in each of the cases:
+
+</details>
 
 <Sandpack>
 
@@ -334,11 +360,29 @@ export default function PackingList() {
 
 </Sandpack>
 
+Этот стиль хорошо работает для простых условий, но используйте его в меру. Если в ваших компонентах слишком много вложенной условной разметки, подумайте об извлечении дочерних компонентов, чтобы навести порядок. В React разметка является частью вашего кода, поэтому вы можете использовать такие инструменты, как переменные и функции, чтобы привести в порядок сложные выражения.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 This style works well for simple conditions, but use it in moderation. If your components get messy with too much nested conditional markup, consider extracting child components to clean things up. In React, markup is a part of your code, so you can use tools like variables and functions to tidy up complex expressions.
 
-### Logical AND operator (`&&`) {/*logical-and-operator-*/}
+</details>
+
+### Логический оператор AND (`&&`) {/*logical-and-operator-*/}
+
+Еще одно часто встречающееся сокращение - это [JavaScript логический оператор AND (`&&`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#:~:text=The%20logical%20AND%20(%20%26%26%20)%20operator,it%20returns%20a%20Boolean%20value.). В компонентах React он часто встречается, когда нужно отобразить JSX, когда условие истинно, **или ничего не отображать в противном случае.** С помощью `&&` можно условно отобразить галочку, только если `isPacked` будет `истинным`:
+
+<details>
+<summary><small>(eng)</small></summary>
 
 Another common shortcut you'll encounter is the [JavaScript logical AND (`&&`) operator.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#:~:text=The%20logical%20AND%20(%20%26%26%20)%20operator,it%20returns%20a%20Boolean%20value.) Inside React components, it often comes up when you want to render some JSX when the condition is true, **or render nothing otherwise.** With `&&`, you could conditionally render the checkmark only if `isPacked` is `true`:
+
+You can read this as *"if `isPacked`, then (`&&`) render the checkmark, otherwise, render nothing"*.
+
+Here it is in action:
+
+</details>
 
 ```js
 return (
@@ -346,11 +390,12 @@ return (
     {name} {isPacked && '✅'}
   </li>
 );
+
 ```
+Вы можете прочитать это как *"если `isPacked`, то (`&&`) отрисовать галочку, иначе ничего не отрисовывать »*.
 
-You can read this as *"if `isPacked`, then (`&&`) render the checkmark, otherwise, render nothing"*.
+Вот это в действии:
 
-Here it is in action:
 
 <Sandpack>
 
@@ -388,10 +433,27 @@ export default function PackingList() {
 
 </Sandpack>
 
+[JavaScript && Выражение ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND) возвращает значение правой части (в нашем случае - галочку), если левая часть (наше условие) равна `true`. Но если условие `false`, то все выражение становится `false`. React рассматривает `false` как «дыру» в дереве JSX, так же как `null` или `undefined`, и не выводит ничего на его место.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 A [JavaScript && expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND) returns the value of its right side (in our case, the checkmark) if the left side (our condition) is `true`. But if the condition is `false`, the whole expression becomes `false`. React considers `false` as a "hole" in the JSX tree, just like `null` or `undefined`, and doesn't render anything in its place.
 
+</details>
 
 <Pitfall>
+
+**Не ставьте цифры в левой части `&&`.
+
+Чтобы проверить условие, JavaScript автоматически преобразует левую часть в булеву величину. Однако если левая часть равна `0`, то все выражение получает это значение (`0`), и React с радостью отобразит `0`, а не ничего.
+
+Например, распространенной ошибкой является написание кода типа `messageCount && <p>Новые сообщения</p>`. Легко предположить, что он ничего не отображает, когда `messageCount` равно `0`, но на самом деле он отображает сам `0`!
+
+Чтобы исправить это, сделайте левую часть булевой: `messageCount > 0 && <p>Новые сообщения</p>`.
+
+<details>
+<summary><small>(eng)</small></summary>
 
 **Don't put numbers on the left side of `&&`.**
 
@@ -401,17 +463,20 @@ For example, a common mistake is to write code like `messageCount && <p>New mess
 
 To fix it, make the left side a boolean: `messageCount > 0 && <p>New messages</p>`.
 
+</details>
+
+
 </Pitfall>
 
-### Conditionally assigning JSX to a variable {/*conditionally-assigning-jsx-to-a-variable*/}
+### Условное присвоение JSX переменной {/*conditionally-assigning-jsx-to-a-variable*/}
 
-When the shortcuts get in the way of writing plain code, try using an `if` statement and a variable. You can reassign variables defined with [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), so start by providing the default content you want to display, the name:
+Когда сокращения мешают писать простой понятный код, попробуйте использовать оператор `if` и переменную. Вы можете переназначать переменные, определенные с помощью [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), поэтому начните с указания содержимого по умолчанию, которое вы хотите отобразить, - названия:
 
 ```js
 let itemContent = name;
 ```
 
-Use an `if` statement to reassign a JSX expression to `itemContent` if `isPacked` is `true`:
+Используйте оператор `if`, чтобы переназначить выражение JSX для `itemContent`, если `isPacked` является `true`:
 
 ```js
 if (isPacked) {
@@ -419,7 +484,7 @@ if (isPacked) {
 }
 ```
 
-[Curly braces open the "window into JavaScript".](/learn/javascript-in-jsx-with-curly-braces#using-curly-braces-a-window-into-the-javascript-world) Embed the variable with curly braces in the returned JSX tree, nesting the previously calculated expression inside of JSX:
+[Фигурные скобки открывают «окно в JavaScript»](/learn/javascript-in-jsx-with-curly-braces#using-curly-braces-a-window-into-the-javascript-world) Вставьте переменную с фигурными скобками в возвращаемое дерево JSX, вложив ранее вычисленное выражение внутрь JSX:
 
 ```js
 <li className="item">
@@ -427,7 +492,22 @@ if (isPacked) {
 </li>
 ```
 
+Этот стиль самый многословный, но и самый гибкий. Вот он в действии:
+
+<details>
+<summary><small>(eng)</small></summary>
+
+When the shortcuts get in the way of writing plain code, try using an `if` statement and a variable. You can reassign variables defined with [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), so start by providing the default content you want to display, the name:
+
+Use an `if` statement to reassign a JSX expression to `itemContent` if `isPacked` is `true`:
+
+[Curly braces open the "window into JavaScript".](/learn/javascript-in-jsx-with-curly-braces#using-curly-braces-a-window-into-the-javascript-world) Embed the variable with curly braces in the returned JSX tree, nesting the previously calculated expression inside of JSX:
+
 This style is the most verbose, but it's also the most flexible. Here it is in action:
+
+Like before, this works not only for text, but for arbitrary JSX too:
+
+</details>
 
 <Sandpack>
 
@@ -469,7 +549,7 @@ export default function PackingList() {
 
 </Sandpack>
 
-Like before, this works not only for text, but for arbitrary JSX too:
+Как и раньше, это работает не только для текста, но и для произвольного JSX:
 
 <Sandpack>
 
@@ -515,9 +595,26 @@ export default function PackingList() {
 
 </Sandpack>
 
+Если вы не знакомы с JavaScript, такое разнообразие стилей поначалу может показаться огромным. Однако их изучение поможет вам читать и писать любой код на JavaScript - и не только компоненты React! Для начала выберите тот, который вам больше нравится, а затем обратитесь к этому справочнику, если забудете, как работают другие.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 If you're not familiar with JavaScript, this variety of styles might seem overwhelming at first. However, learning them will help you read and write any JavaScript code -- and not just React components! Pick the one you prefer for a start, and then consult this reference again if you forget how the other ones work.
 
+</details>
+
 <Recap>
+
+* В React вы управляете логикой ветвления с помощью JavaScript.
+* Вы можете условно вернуть выражение JSX с помощью оператора `if`.
+* Вы можете условно сохранить некоторые JSX в переменной и затем включить их в другие JSX с помощью фигурных скобок.
+* В JSX выражение `{cond ? <A /> : <B />}` означает *«если `cond`, вывести `<A />`, иначе `<B />`»*.
+* В JSX `{cond && <A />}` означает *"если `cond`, вывести `<A />`, иначе ничего »*.
+* Эти сокращения являются общепринятыми, но вы не обязаны их использовать, если предпочитаете простое `if`.
+
+<details>
+<summary><small>(eng)</small></summary>
 
 * In React, you control branching logic with JavaScript.
 * You can return a JSX expression conditionally with an `if` statement.
@@ -526,15 +623,22 @@ If you're not familiar with JavaScript, this variety of styles might seem overwh
 * In JSX, `{cond && <A />}` means *"if `cond`, render `<A />`, otherwise nothing"*.
 * The shortcuts are common, but you don't have to use them if you prefer plain `if`.
 
+</details>
+
 </Recap>
-
-
 
 <Challenges>
 
-#### Show an icon for incomplete items with `? :` {/*show-an-icon-for-incomplete-items-with--*/}
+#### Выведите иконку для незавершенных элементов с помощью `? :` {/*show-an-icon-for-incomplete-items-with--*/}
+
+Используйте условный оператор (`cond ? a : b`) для отображения ❌, если `isPacked` не является `true`.
+
+<details>
+<summary><small>(eng)</small></summary>
 
 Use the conditional operator (`cond ? a : b`) to render a ❌ if `isPacked` isn’t `true`.
+
+</details>
 
 <Sandpack>
 
@@ -612,7 +716,18 @@ export default function PackingList() {
 
 </Solution>
 
-#### Show the item importance with `&&` {/*show-the-item-importance-with-*/}
+#### Выведите важность пункта с помощью `&&` {/*show-the-item-importance-with-*/}
+
+В этом примере каждый `Item` получает числовой параметр `importance`. Используйте оператор `&&`, чтобы вывести «_(Важность: X)_» курсивом, но только для элементов, имеющих ненулевую важность. В итоге ваш список предметов должен выглядеть следующим образом:
+
+* Космический скафандр _(Важность: 9)_
+* Шлем с золотым листом
+* Фотография Тама _(Важность: 6)_
+
+Не забудьте добавить пробел между двумя метками!
+
+<details>
+<summary><small>(eng)</small></summary>
 
 In this example, each `Item` receives a numerical `importance` prop. Use the `&&` operator to render "_(Importance: X)_" in italics, but only for items that have non-zero importance. Your item list should end up looking like this:
 
@@ -621,6 +736,10 @@ In this example, each `Item` receives a numerical `importance` prop. Use the `&&
 * Photo of Tam _(Importance: 6)_
 
 Don't forget to add a space between the two labels!
+
+This should do the trick:
+
+</details>
 
 <Sandpack>
 
@@ -660,7 +779,7 @@ export default function PackingList() {
 
 <Solution>
 
-This should do the trick:
+Это должно сработать:
 
 <Sandpack>
 
@@ -702,15 +821,35 @@ export default function PackingList() {
 
 </Sandpack>
 
+Обратите внимание, что нужно писать `importance > 0 && ...`, а не `importance && ...`, чтобы, если `importance` равно `0`, `0` не отображалось в качестве результата!
+
+В этом решении используются два отдельных условия, чтобы вставить пробел между именем и меткой важности. В качестве альтернативы можно использовать фрагмент с ведущим пробелом: `importance > 0 && <> <i>...</i></>` или добавить пробел непосредственно внутри `<i>`: `importance > 0 && <i> ...</i>`.
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Note that you must write `importance > 0 && ...` rather than `importance && ...` so that if the `importance` is `0`, `0` isn't rendered as the result!
 
 In this solution, two separate conditions are used to insert a space between the name and the importance label. Alternatively, you could use a Fragment with a leading space: `importance > 0 && <> <i>...</i></>` or add a space immediately inside the `<i>`:  `importance > 0 && <i> ...</i>`.
 
+</details>
+
+
 </Solution>
 
-#### Refactor a series of `? :` to `if` and variables {/*refactor-a-series-of---to-if-and-variables*/}
+#### Рефакторинг серии `? :` на `if` и переменные {/*refactor-a-series-of---to-if-and-variables*/}
+
+Этот компонент `Drink` использует серию условий `? :` для отображения различной информации в зависимости от того, является ли параметр `name` `«чаем»` или `«кофе»`. Проблема в том, что информация о каждом напитке распределена по нескольким условиям. Переработайте этот код, чтобы использовать один оператор `if` вместо трех `? :` условий.
+
+<details>
+<summary><small>(eng)</small></summary>
 
 This `Drink` component uses a series of `? :` conditions to show different information depending on whether the `name` prop is `"tea"` or `"coffee"`. The problem is that the information about each drink is spread across multiple conditions. Refactor this code to use a single `if` statement instead of three `? :` conditions.
+
+Once you've refactored the code to use `if`, do you have further ideas on how to simplify it?
+
+</details>
+
 
 <Sandpack>
 
@@ -743,11 +882,19 @@ export default function DrinkList() {
 
 </Sandpack>
 
-Once you've refactored the code to use `if`, do you have further ideas on how to simplify it?
+После рефакторинга кода на использование `if` у вас есть дальнейшие идеи, как его упростить?
 
 <Solution>
 
+Вы можете использовать несколько способов, но вот один из них - отправная точка:
+
+<details>
+<summary><small>(eng)</small></summary>
+
 There are multiple ways you could go about this, but here is one starting point:
+
+</details>
+
 
 <Sandpack>
 
@@ -790,9 +937,18 @@ export default function DrinkList() {
 
 </Sandpack>
 
+Здесь информация о каждом напитке сгруппирована вместе, а не распределена по нескольким условиям. Это облегчает добавление новых напитков в будущем.
+Другим решением может быть полное удаление условий путем перемещения информации в объекты:
+
+
+<details>
+<summary><small>(eng)</small></summary>
+
 Here the information about each drink is grouped together instead of being spread across multiple conditions. This makes it easier to add more drinks in the future.
 
 Another solution would be to remove the condition altogether by moving the information into objects:
+
+</details>
 
 <Sandpack>
 
