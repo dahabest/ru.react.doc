@@ -7,18 +7,18 @@
  **/
 
 const isProd = process.env.NODE_ENV === 'production';
-console.log({isProd});
+console.log('subdomain');
 const nextConfig = {
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
   reactStrictMode: true,
   output: 'export',
   images: {
-    unoptimized: true, // Disable default image optimization
+    unoptimized: true, // Disable default image optimization,
   },
-  basePath: isProd ? '/ru.react.doc' : '',
-  assetPrefix: isProd
+  basePath: process.env.NEXT_SUBDOMAIN,
+  /* assetPrefix: isProd
     ? 'https://dahabest.github.io/ru.react.doc/'
-    : 'http://localhost:3000/',
+    : 'http://localhost:3000/', */
   experimental: {
     // TODO: Remove after https://github.com/vercel/next.js/issues/49355 is fixed
     appDir: false,
