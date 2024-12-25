@@ -7,6 +7,7 @@
  **/
 
 const isProd = process.env.NODE_ENV === 'production';
+console.log({isProd});
 const nextConfig = {
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
   reactStrictMode: true,
@@ -14,9 +15,10 @@ const nextConfig = {
   images: {
     unoptimized: true, // Disable default image optimization
   },
-  //basePath: isProd ? '/ru.react.doc' : '',
-  assetPrefix: '/ru.react.doc/',
-  basePath: '/ru.react.doc',
+  basePath: isProd ? '/ru.react.doc' : '',
+  assetPrefix: isProd
+    ? 'https://dahabest.github.io/ru.react.doc/'
+    : 'http://localhost:3000/',
   experimental: {
     // TODO: Remove after https://github.com/vercel/next.js/issues/49355 is fixed
     appDir: false,
