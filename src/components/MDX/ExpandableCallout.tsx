@@ -52,7 +52,8 @@ const variantMap = {
       'linear-gradient(rgba(245, 249, 248, 0), rgba(245, 249, 248, 1)',
   },
   pitfall: {
-    title: 'Вероятность сделать ошибку',
+    title: 'Вероятная ошибка',
+    //title: 'Вероятность сделать ошибку',
     //title: 'Вероятность ошибиться',
     Icon: IconPitfall,
     containerClasses: 'bg-yellow-5 dark:bg-yellow-60 dark:bg-opacity-20',

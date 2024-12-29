@@ -99,12 +99,12 @@
       ]
     },
     {
-      "title": "Adding Interactivity",
+      "title": "Добавление интерактивности",
       "path": "/learn/adding-interactivity",
       "tags": [],
       "routes": [
         {
-          "title": "Responding to Events",
+          "title": "Реакция на события",
           "path": "/learn/responding-to-events"
         },
         {
