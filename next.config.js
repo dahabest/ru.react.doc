@@ -15,7 +15,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // Disable default image optimization,
   },
-  basePath: process.env.NEXT_SUBDOMAIN,
+  //basePath: process.env.NEXT_SUBDOMAIN,
   //assetPrefix: '/ru.react.doc'
   experimental: {
     // TODO: Remove after https://github.com/vercel/next.js/issues/49355 is fixed

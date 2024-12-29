@@ -43,7 +43,6 @@ React lets you add *event handlers* to your JSX. Event handlers are your own fun
 <summary><small>(eng)</small></summary>
 
 <b>Adding event handlers :</b>
-
 To add an event handler, you will first define a function and then [pass it as a prop](/learn/passing-props-to-a-component) to the appropriate JSX tag. For example, here is a button that doesn't do anything yet:
 
 </details>
