@@ -9,6 +9,10 @@
 const isProd = process.env.NODE_ENV === 'production';
 console.log('subdomain');
 const nextConfig = {
+  output: 'export',
+  images: {unoptimized: true},
+  //basePath: isProd ? '/ru.react.doc' : '',
+  basePath: '/ru.react.doc',
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
   reactStrictMode: true,
   output: 'export',
@@ -20,10 +24,8 @@ const nextConfig = {
     ? 'https://dahabest.github.io/ru.react.doc/'
     : 'http://localhost:3000/', */
   experimental: {
-    // TODO: Remove after https://github.com/vercel/next.js/issues/49355 is fixed
-    appDir: false,
     scrollRestoration: true,
-    legacyBrowsers: false,
+    reactCompiler: true,
   },
   env: {},
   webpack: (config, {dev, isServer, ...options}) => {
