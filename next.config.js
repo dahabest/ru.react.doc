@@ -7,21 +7,17 @@
  **/
 
 const isProd = process.env.NODE_ENV === 'production';
-console.log('subdomain');
 const nextConfig = {
+  output: 'export',
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
   reactStrictMode: true,
   output: 'export',
   images: {
     unoptimized: true, // Disable default image optimization,
   },
-  //basePath: process.env.NEXT_SUBDOMAIN,
-  //assetPrefix: '/ru.react.doc'
   experimental: {
-    // TODO: Remove after https://github.com/vercel/next.js/issues/49355 is fixed
-    appDir: false,
     scrollRestoration: true,
-    legacyBrowsers: false,
+    reactCompiler: true,
   },
   env: {},
   webpack: (config, {dev, isServer, ...options}) => {
