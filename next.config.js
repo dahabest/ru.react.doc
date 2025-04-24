@@ -20,7 +20,8 @@ const nextConfig = {
     unoptimized: true, // Disable default image optimization,
   },
   basePath: process.env.NEXT_SUBDOMAIN,
-  /* assetPrefix: isProd
+  assetPrefix: '/ru.react.doc',
+  /*  assetPrefix: isProd
     ? 'https://dahabest.github.io/ru.react.doc/'
     : 'http://localhost:3000/', */
   experimental: {
