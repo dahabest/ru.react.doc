@@ -10,16 +10,12 @@ const isProd = process.env.NODE_ENV === 'production';
 console.log('subdomain');
 const nextConfig = {
   output: 'export',
-  images: {unoptimized: true},
-  //basePath: isProd ? '/ru.react.doc' : '',
-  basePath: '/ru.react.doc',
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
   reactStrictMode: true,
   output: 'export',
   images: {
     unoptimized: true, // Disable default image optimization,
   },
-  // basePath: process.env.NEXT_SUBDOMAIN,
   assetPrefix: isProd ? '/ru.react.doc/' : '', // Базовый путь
   basePath: isProd ? '/ru.react.doc' : '', // Базовый путь для маршрутов
   trailingSlash: true, // Добавляет / в конце URL
