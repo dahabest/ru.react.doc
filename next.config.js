@@ -19,8 +19,10 @@ const nextConfig = {
   images: {
     unoptimized: true, // Disable default image optimization,
   },
-  basePath: process.env.NEXT_SUBDOMAIN,
-  assetPrefix: '/ru.react.doc',
+  // basePath: process.env.NEXT_SUBDOMAIN,
+  assetPrefix: isProd ? '/ru.react.doc/' : '', // Базовый путь
+  basePath: isProd ? '/ru.react.doc' : '', // Базовый путь для маршрутов
+  trailingSlash: true, // Добавляет / в конце URL
   /*  assetPrefix: isProd
     ? 'https://dahabest.github.io/ru.react.doc/'
     : 'http://localhost:3000/', */
