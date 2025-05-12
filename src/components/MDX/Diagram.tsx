@@ -37,7 +37,7 @@ export function Diagram({
       <div className="dark-image">
         <Image
           src={`${
-            process.env.NEXT_SUBDOMAIN || ''
+            process.env.NEXT_SUBDOMAIN || '/ru.react.doc'
           }/images/docs/diagrams/${name}.dark.png`}
           alt={alt}
           height={height}
@@ -47,7 +47,7 @@ export function Diagram({
       <div className="light-image">
         <Image
           src={`${
-            process.env.NEXT_SUBDOMAIN || ''
+            process.env.NEXT_SUBDOMAIN || '/ru.react.doc'
           }/images/docs/diagrams/${name}.png`}
           alt={alt}
           height={height}
