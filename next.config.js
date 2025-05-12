@@ -7,7 +7,7 @@
  **/
 
 const isProd = process.env.NODE_ENV === 'production';
-console.log('subdomain');
+// console.log('subdomain');
 const nextConfig = {
   output: 'export',
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
