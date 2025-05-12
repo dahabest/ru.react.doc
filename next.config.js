@@ -6,7 +6,11 @@
  * @type {import('next').NextConfig}
  **/
 //const isProd = process.env.NODE_ENV === 'production'; // temp
-const isProd = false; // temp
+
+// http://localhost:3000/ru.react.doc/learn/describing-the-ui/
+
+//const isProd = false; // temp
+const isProd = process.env.NODE_ENV === 'production'; // temp
 
 const nextConfig = {
   output: 'export',
@@ -16,9 +20,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: isProd ? '/ru.react.doc/' : '', // Базовый путь
-  basePath: isProd ? '/ru.react.doc' : '', // Базовый путь для маршрутов
-  trailingSlash: true, // Добавляет / в конце URL
+  basePath: isProd ? '/ru.react.doc' : '/ru.react.doc', // Базовый путь для маршрутов
+  assetPrefix: isProd
+    ? '/ru.react.doc/'
+    : 'http://localhost:3000/ru.react.doc/', // Базовый путь
+  // trailingSlash: true, // Добавляет / в конце URL
   experimental: {
     scrollRestoration: true,
     reactCompiler: true,
