@@ -5,8 +5,9 @@
 /**
  * @type {import('next').NextConfig}
  **/
-const isProd = process.env.NODE_ENV === 'production';
-// console.log('subdomain');
+//const isProd = process.env.NODE_ENV === 'production'; // temp
+const isProd = false; // temp
+
 const nextConfig = {
   output: 'export',
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
