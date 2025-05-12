@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - publishing
+      - part1-public
 
 permissions:
   contents: read

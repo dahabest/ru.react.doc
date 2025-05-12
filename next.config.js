@@ -5,14 +5,19 @@
 /**
  * @type {import('next').NextConfig}
  **/
+const isProd = process.env.NODE_ENV === 'production';
+// console.log('subdomain');
 const nextConfig = {
   output: 'export',
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
   reactStrictMode: true,
   output: 'export',
   images: {
-    unoptimized: true, // Disable default image optimization,
+    unoptimized: true,
   },
+  assetPrefix: isProd ? '/ru.react.doc/' : '', // Базовый путь
+  basePath: isProd ? '/ru.react.doc' : '', // Базовый путь для маршрутов
+  trailingSlash: true, // Добавляет / в конце URL
   experimental: {
     scrollRestoration: true,
     reactCompiler: true,
