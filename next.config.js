@@ -5,8 +5,6 @@
 /**
  * @type {import('next').NextConfig}
  **/
-
-const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   output: 'export',
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
