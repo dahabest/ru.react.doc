@@ -9,8 +9,8 @@
 
 // http://localhost:3000/ru.react.doc/learn/describing-the-ui/
 
-//const isProd = false; // temp
-const isProd = process.env.NODE_ENV === 'production'; // temp
+const isProd = false; // temp
+//const isProd = process.env.NODE_ENV === 'production'; // temp
 
 const nextConfig = {
   output: 'export',
