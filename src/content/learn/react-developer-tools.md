@@ -24,7 +24,7 @@ The easiest way to debug websites built with React is to install the React Devel
 
 Now, if you visit a website **built with React,** you will see the _Components_ and _Profiler_ panels.
 
-![React Developer Tools extension](/images/docs/react-devtools-extension.png)
+![React Developer Tools extension](/ru.react.doc/images/docs/react-devtools-extension.png)
 
 ### Safari and other browsers {/*safari-and-other-browsers*/}
 For other browsers (for example, Safari), install the [`react-devtools`](https://www.npmjs.com/package/react-devtools) npm package:
@@ -50,7 +50,7 @@ Then connect your website by adding the following `<script>` tag to the beginnin
 
 Reload your website in the browser now to view it in developer tools.
 
-![React Developer Tools standalone](/images/docs/react-devtools-standalone.png)
+![React Developer Tools standalone](/ru.react.doc/images/docs/react-devtools-standalone.png)
 
 ## Mobile (React Native) {/*mobile-react-native*/}
 

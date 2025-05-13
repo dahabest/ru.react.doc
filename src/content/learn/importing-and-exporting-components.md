@@ -223,7 +223,7 @@ There are two primary ways to export values with JavaScript: default exports and
 </details>
 
 
-![Default and named exports](/images/docs/illustrations/i_import-export.svg)
+![Default and named exports](/ru.react.doc/images/docs/illustrations/i_import-export.svg)
 
 То, как вы экспортируете компонент, определяет, как вы должны его импортировать. При попытке импортировать стандартный экспорт тем же способом, что и именованный экспорт, вы получите ошибку! Эта диаграмма поможет вам следить за этим:
 
