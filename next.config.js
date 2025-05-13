@@ -13,6 +13,7 @@
 
 //const isProd = false; // temp
 const isProd = process.env.NODE_ENV === 'production'; // temp
+//const isProd = false;
 
 const nextConfig = {
   output: 'export',
@@ -22,11 +23,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isProd ? '/ru.react.doc' : '/ru.react.doc', // Базовый путь для маршрутов
+  basePath: '/ru.react.doc',
   assetPrefix: isProd
     ? '/ru.react.doc/'
-    : 'http://localhost:3000/ru.react.doc/', // Базовый путь
-  // trailingSlash: true, // Добавляет / в конце URL
+    : 'http://localhost:3000/ru.react.doc/',
   experimental: {
     scrollRestoration: true,
     reactCompiler: true,
@@ -79,3 +79,5 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+// trailingSlash: true, // Добавляет / в конце URL
