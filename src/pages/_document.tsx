@@ -26,7 +26,7 @@ const MyDocument = () => {
         sizes="16x16"
         href="/favicon-16x16.png"
       />
-      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="manifest" href="/ru.react.doc/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#404756" />
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta name="theme-color" content="#23272f" />

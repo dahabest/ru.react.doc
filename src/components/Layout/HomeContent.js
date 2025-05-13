@@ -123,7 +123,7 @@ export function HomeContent() {
               loading="eager"
               width={313}
               height={160}
-              src="/images/uwu.png"
+              src="/ru.react.doc/images/uwu.png"
             />
           </div>
           <Logo
@@ -505,7 +505,7 @@ export function HomeContent() {
                 alt="logo by @sawaratsuki1004"
                 title="logo by @sawaratsuki1004"
                 className="uwu-visible mb-10 lg:mb-8 h-24 lg:h-32"
-                src="/images/uwu.png"
+                src="/ru.react.doc/images/uwu.png"
               />
             </div>
             <Logo className="uwu-hidden text-brand dark:text-brand-dark w-24 lg:w-28 mb-10 lg:mb-8 mt-12 h-auto mx-auto self-start" />

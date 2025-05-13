@@ -509,7 +509,7 @@ You can think of a component with a `children` prop as having a "hole" that can 
 
 </details>
 
-<Illustration src="/images/docs/illustrations/i_children-prop.png" alt='A puzzle-like Card tile with a slot for "children" pieces like text and Avatar' />
+<Illustration src="/ru.react.doc/images/docs/illustrations/i_children-prop.png" alt='A puzzle-like Card tile with a slot for "children" pieces like text and Avatar' />
 
 ## Как изменяются параметры с течением времени {/*how-props-change-over-time*/}
 

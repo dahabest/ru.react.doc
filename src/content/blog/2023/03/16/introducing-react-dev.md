@@ -451,7 +451,7 @@ When `section` changes to `div`, the `section` is deleted and the new `div` is a
 
 You'll also see some illustrations throughout the docs--here's one of the [browser painting the screen](/learn/render-and-commit#epilogue-browser-paint):
 
-<Illustration alt="A browser painting 'still life with card element'." src="/images/docs/illustrations/i_browser-paint.png" />
+<Illustration alt="A browser painting 'still life with card element'." src="/ru.react.doc/images/docs/illustrations/i_browser-paint.png" />
 
 We've confirmed with the browser vendors that this depiction is 100% scientifically accurate.
 

@@ -27,7 +27,7 @@ The JSON API returns some data that looks like this:
 
 The mockup looks like this:
 
-<img src="/images/docs/s_thinking-in-react_ui.png" width="300" style={{margin: '0 auto'}} />
+<img src="/ru.react.doc/images/docs/s_thinking-in-react_ui.png" width="300" style={{margin: '0 auto'}} />
 
 To implement a UI in React, you will usually follow the same five steps.
 
@@ -49,7 +49,7 @@ There are five components on this screen:
 
 <CodeDiagram flip>
 
-<img src="/images/docs/s_thinking-in-react_ui_outline.png" width="500" style={{margin: '0 auto'}} />
+<img src="/ru.react.doc/images/docs/s_thinking-in-react_ui_outline.png" width="500" style={{margin: '0 auto'}} />
 
 1. `FilterableProductTable` (grey) contains the entire app.
 2. `SearchBar` (blue) receives the user input.

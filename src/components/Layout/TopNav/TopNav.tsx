@@ -273,7 +273,7 @@ export default function TopNav({
                         priority
                         width={63}
                         height={32}
-                        src="/images/uwu.png"
+                        src="/ru.react.doc/images/uwu.png"
                       />
                     </NextLink>
                   </div>
