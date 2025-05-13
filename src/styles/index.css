@@ -12,7 +12,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/ru.react.doc/fonts/Source-Code-Pro-Regular.woff2')
+    src: url('https://react.dev/fonts/Source-Code-Pro-Regular.woff2')
       format('woff2');
   }
 

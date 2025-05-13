@@ -124,7 +124,7 @@ export const Seo = withRouter(
         )}
         <link
           rel="preload"
-          href="/fonts/Source-Code-Pro-Regular.woff2"
+          href="https://react.dev/fonts/Source-Code-Pro-Regular.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
