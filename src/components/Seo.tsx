@@ -31,7 +31,7 @@ export const Seo = withRouter(
   ({
     title,
     titleForTitleTag,
-    image = '/images/og-default.png',
+    image = '/ru.react.doc/images/og-default.png',
     router,
     children,
     isHomePage,

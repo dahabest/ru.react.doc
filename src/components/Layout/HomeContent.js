@@ -665,39 +665,39 @@ function CTA({children, icon, href}) {
   );
 }
 
-const reactConf2021Cover = '/images/home/conf2021/cover.svg';
-const reactConf2019Cover = '/images/home/conf2019/cover.svg';
+const reactConf2021Cover = '/ru.react.doc/images/home/conf2021/cover.svg';
+const reactConf2019Cover = '/ru.react.doc/images/home/conf2019/cover.svg';
 const communityImages = [
   {
-    src: '/images/home/community/react_conf_fun.webp',
+    src: '/ru.react.doc/images/home/community/react_conf_fun.webp',
     alt: 'People singing karaoke at React Conf',
   },
   {
-    src: '/images/home/community/react_india_sunil.webp',
+    src: '/ru.react.doc/images/home/community/react_india_sunil.webp',
     alt: 'Sunil Pai speaking at React India',
   },
   {
-    src: '/images/home/community/react_conf_hallway.webp',
+    src: '/ru.react.doc/images/home/community/react_conf_hallway.webp',
     alt: 'A hallway conversation between two people at React Conf',
   },
   {
-    src: '/images/home/community/react_india_hallway.webp',
+    src: '/ru.react.doc/images/home/community/react_india_hallway.webp',
     alt: 'A hallway conversation at React India',
   },
   {
-    src: '/images/home/community/react_conf_elizabet.webp',
+    src: '/ru.react.doc/images/home/community/react_conf_elizabet.webp',
     alt: 'Elizabet Oliveira speaking at React Conf',
   },
   {
-    src: '/images/home/community/react_india_selfie.webp',
+    src: '/ru.react.doc/images/home/community/react_india_selfie.webp',
     alt: 'People taking a group selfie at React India',
   },
   {
-    src: '/images/home/community/react_conf_nat.webp',
+    src: '/ru.react.doc/images/home/community/react_conf_nat.webp',
     alt: 'Nat Alison speaking at React Conf',
   },
   {
-    src: '/images/home/community/react_india_team.webp',
+    src: '/ru.react.doc/images/home/community/react_india_team.webp',
     alt: 'Organizers greeting attendees at React India',
   },
 ];
@@ -1033,35 +1033,35 @@ function Example3() {
       id: 'vids-0',
       title: 'React: The Documentary',
       description: 'The origin story of React',
-      image: '/images/home/videos/documentary.webp',
+      image: '/ru.react.doc/images/home/videos/documentary.webp',
       url: 'https://www.youtube.com/watch?v=8pDqJVdNa44',
     },
     {
       id: 'vids-1',
       title: 'Rethinking Best Practices',
       description: 'Pete Hunt (2013)',
-      image: '/images/home/videos/rethinking.jpg',
+      image: '/ru.react.doc/images/home/videos/rethinking.jpg',
       url: 'https://www.youtube.com/watch?v=x7cQ3mrcKaY',
     },
     {
       id: 'vids-2',
       title: 'Introducing React Native',
       description: 'Tom Occhino (2015)',
-      image: '/images/home/videos/rn.jpg',
+      image: '/ru.react.doc/images/home/videos/rn.jpg',
       url: 'https://www.youtube.com/watch?v=KVZ-P-ZI6W4',
     },
     {
       id: 'vids-3',
       title: 'Introducing React Hooks',
       description: 'Sophie Alpert and Dan Abramov (2018)',
-      image: '/images/home/videos/hooks.jpg',
+      image: '/ru.react.doc/images/home/videos/hooks.jpg',
       url: 'https://www.youtube.com/watch?v=V-QO-KO90iQ',
     },
     {
       id: 'vids-4',
       title: 'Introducing Server Components',
       description: 'Dan Abramov and Lauren Tan (2020)',
-      image: '/images/home/videos/rsc.jpg',
+      image: '/ru.react.doc/images/home/videos/rsc.jpg',
       url: 'https://www.youtube.com/watch?v=TQQPAU21ZUw',
     },
   ];
@@ -2414,10 +2414,10 @@ function fetchTalks(confId) {
             url: 'https://www.youtube.com/watch?v=FZ0cG47msEk&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=1',
             image: {
               speakers: [
-                '/images/home/conf2021/andrew.jpg',
-                '/images/home/conf2021/lauren.jpg',
-                '/images/home/conf2021/juan.jpg',
-                '/images/home/conf2021/rick.jpg',
+                '/ru.react.doc/images/home/conf2021/andrew.jpg',
+                '/ru.react.doc/images/home/conf2021/lauren.jpg',
+                '/ru.react.doc/images/home/conf2021/juan.jpg',
+                '/ru.react.doc/images/home/conf2021/rick.jpg',
               ],
             },
           },
@@ -2427,7 +2427,7 @@ function fetchTalks(confId) {
             description: 'Shruti Kapoor',
             url: 'https://www.youtube.com/watch?v=ytudH8je5ko&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=2',
             image: {
-              speakers: ['/images/home/conf2021/shruti.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/shruti.jpg'],
             },
           },
           {
@@ -2436,7 +2436,7 @@ function fetchTalks(confId) {
             description: 'Shaundai Person',
             url: 'https://www.youtube.com/watch?v=pj5N-Khihgc&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=3',
             image: {
-              speakers: ['/images/home/conf2021/shaundai.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/shaundai.jpg'],
             },
           },
           {
@@ -2445,7 +2445,7 @@ function fetchTalks(confId) {
             description: 'Aakansha Doshi',
             url: 'https://www.youtube.com/watch?v=qn7gRClrC9U&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=4',
             image: {
-              speakers: ['/images/home/conf2021/aakansha.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/aakansha.jpg'],
             },
           },
           {
@@ -2454,7 +2454,7 @@ function fetchTalks(confId) {
             description: 'Brian Vaughn',
             url: 'https://www.youtube.com/watch?v=oxDfrke8rZg&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=5',
             image: {
-              speakers: ['/images/home/conf2021/brian.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/brian.jpg'],
             },
           },
           {
@@ -2463,7 +2463,7 @@ function fetchTalks(confId) {
             description: 'Xuan Huang (黄玄)',
             url: 'https://www.youtube.com/watch?v=lGEMwh32soc&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=6',
             image: {
-              speakers: ['/images/home/conf2021/xuan.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/xuan.jpg'],
             },
           },
           {
@@ -2472,7 +2472,7 @@ function fetchTalks(confId) {
             description: 'Rachel Nabors',
             url: 'https://www.youtube.com/watch?v=mneDaMYOKP8&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=7',
             image: {
-              speakers: ['/images/home/conf2021/rachel.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/rachel.jpg'],
             },
           },
           {
@@ -2481,7 +2481,7 @@ function fetchTalks(confId) {
             description: "Debbie O'Brien",
             url: 'https://www.youtube.com/watch?v=-7odLW_hG7s&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=8',
             image: {
-              speakers: ['/images/home/conf2021/debbie.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/debbie.jpg'],
             },
           },
           {
@@ -2490,7 +2490,7 @@ function fetchTalks(confId) {
             description: 'Sarah Rainsberger',
             url: 'https://www.youtube.com/watch?v=5X-WEQflCL0&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=9',
             image: {
-              speakers: ['/images/home/conf2021/sarah.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/sarah.jpg'],
             },
           },
           {
@@ -2499,7 +2499,7 @@ function fetchTalks(confId) {
             description: 'Linton Ye',
             url: 'https://www.youtube.com/watch?v=7cPWmID5XAk&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=10',
             image: {
-              speakers: ['/images/home/conf2021/linton.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/linton.jpg'],
             },
           },
           {
@@ -2508,7 +2508,7 @@ function fetchTalks(confId) {
             description: 'Delba de Oliveira',
             url: 'https://www.youtube.com/watch?v=zL8cz2W0z34&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=11',
             image: {
-              speakers: ['/images/home/conf2021/delba.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/delba.jpg'],
             },
           },
           {
@@ -2517,7 +2517,7 @@ function fetchTalks(confId) {
             description: 'Robert Balicki',
             url: 'https://www.youtube.com/watch?v=lhVGdErZuN4&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=12',
             image: {
-              speakers: ['/images/home/conf2021/robert.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/robert.jpg'],
             },
           },
           {
@@ -2527,8 +2527,8 @@ function fetchTalks(confId) {
             url: 'https://www.youtube.com/watch?v=9L4FFrvwJwY&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=13',
             image: {
               speakers: [
-                '/images/home/conf2021/eric.jpg',
-                '/images/home/conf2021/steven.jpg',
+                '/ru.react.doc/images/home/conf2021/eric.jpg',
+                '/ru.react.doc/images/home/conf2021/steven.jpg',
               ],
             },
           },
@@ -2538,7 +2538,7 @@ function fetchTalks(confId) {
             description: 'Roman Rädle',
             url: 'https://www.youtube.com/watch?v=NLj73vrc2I8&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=14',
             image: {
-              speakers: ['/images/home/conf2021/roman.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/roman.jpg'],
             },
           },
           {
@@ -2547,7 +2547,7 @@ function fetchTalks(confId) {
             description: 'Daishi Kato',
             url: 'https://www.youtube.com/watch?v=oPfSC5bQPR8&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=15',
             image: {
-              speakers: ['/images/home/conf2021/daishi.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/daishi.jpg'],
             },
           },
           {
@@ -2556,7 +2556,7 @@ function fetchTalks(confId) {
             description: 'Diego Haz',
             url: 'https://www.youtube.com/watch?v=dcm8fjBfro8&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=16',
             image: {
-              speakers: ['/images/home/conf2021/diego.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/diego.jpg'],
             },
           },
           {
@@ -2565,7 +2565,7 @@ function fetchTalks(confId) {
             description: 'Tafu Nakazaki',
             url: 'https://www.youtube.com/watch?v=S4a0QlsH0pU&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=17',
             image: {
-              speakers: ['/images/home/conf2021/tafu.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/tafu.jpg'],
             },
           },
           {
@@ -2574,7 +2574,7 @@ function fetchTalks(confId) {
             description: 'Lyle Troxell',
             url: 'https://www.youtube.com/watch?v=b3l4WxipFsE&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=18',
             image: {
-              speakers: ['/images/home/conf2021/lyle.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/lyle.jpg'],
             },
           },
           {
@@ -2583,7 +2583,7 @@ function fetchTalks(confId) {
             description: 'Helen Lin',
             url: 'https://www.youtube.com/watch?v=HS6vIYkSNks&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa&index=19',
             image: {
-              speakers: ['/images/home/conf2021/helen.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2021/helen.jpg'],
             },
           },
         ]);
@@ -2595,7 +2595,7 @@ function fetchTalks(confId) {
             description: 'Tom Occhino',
             url: 'https://www.youtube.com/watch?v=QnZHO7QvjaM&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh',
             image: {
-              speakers: ['/images/home/conf2019/tom.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/tom.jpg'],
             },
           },
           {
@@ -2613,7 +2613,7 @@ function fetchTalks(confId) {
             description: 'Frank Yan',
             url: 'https://www.youtube.com/watch?v=9JZHodNR184&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=3',
             image: {
-              speakers: ['/images/home/conf2019/frank.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/frank.jpg'],
             },
           },
           {
@@ -2622,7 +2622,7 @@ function fetchTalks(confId) {
             description: 'Ashley Watkins',
             url: 'https://www.youtube.com/watch?v=KT3XKDBZW7M&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=4',
             image: {
-              speakers: ['/images/home/conf2019/ashley.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/ashley.jpg'],
             },
           },
           {
@@ -2631,7 +2631,7 @@ function fetchTalks(confId) {
             description: 'Tania Papazafeiropoulou',
             url: 'https://www.youtube.com/watch?v=zVHWugBPGBE&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=5',
             image: {
-              speakers: ['/images/home/conf2019/tania.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/tania.jpg'],
             },
           },
           {
@@ -2641,7 +2641,7 @@ function fetchTalks(confId) {
             description: 'Tejas Kumar',
             url: 'https://www.youtube.com/watch?v=cdsnzfJUqm0&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=6',
             image: {
-              speakers: ['/images/home/conf2019/tejas.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/tejas.jpg'],
             },
           },
           {
@@ -2650,7 +2650,7 @@ function fetchTalks(confId) {
             description: 'Sophie Alpert',
             url: 'https://www.youtube.com/watch?v=CGpMlWVcHok&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=7',
             image: {
-              speakers: ['/images/home/conf2019/sophie.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/sophie.jpg'],
             },
           },
           {
@@ -2659,7 +2659,7 @@ function fetchTalks(confId) {
             description: 'Nat Alison',
             url: 'https://www.youtube.com/watch?v=lLE4Jqaek5k&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=12',
             image: {
-              speakers: ['/images/home/conf2019/nat.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/nat.jpg'],
             },
           },
           {
@@ -2669,8 +2669,8 @@ function fetchTalks(confId) {
             url: 'https://www.youtube.com/watch?v=fHQ1WSx41CA&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=13',
             image: {
               speakers: [
-                '/images/home/conf2019/maja.jpg',
-                '/images/home/conf2019/tae.jpg',
+                '/ru.react.doc/images/home/conf2019/maja.jpg',
+                '/ru.react.doc/images/home/conf2019/tae.jpg',
               ],
             },
           },
@@ -2680,7 +2680,7 @@ function fetchTalks(confId) {
             description: 'Brittany Feenstra',
             url: 'https://www.youtube.com/watch?v=ONSD-t4gBb8&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=14',
             image: {
-              speakers: ['/images/home/conf2019/brittany.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/brittany.jpg'],
             },
           },
           {
@@ -2689,7 +2689,7 @@ function fetchTalks(confId) {
             description: 'Becca Bailey',
             url: 'https://www.youtube.com/watch?v=wUMMUyQtMSg&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=15',
             image: {
-              speakers: ['/images/home/conf2019/becca.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/becca.jpg'],
             },
           },
           {
@@ -2698,7 +2698,7 @@ function fetchTalks(confId) {
             description: 'Lee Byron',
             url: 'https://www.youtube.com/watch?v=vG8WpLr6y_U&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=16',
             image: {
-              speakers: ['/images/home/conf2019/lee.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/lee.jpg'],
             },
           },
           {
@@ -2707,7 +2707,7 @@ function fetchTalks(confId) {
             description: 'Brian Vaughn',
             url: 'https://www.youtube.com/watch?v=Mjrfb1r3XEM&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=17',
             image: {
-              speakers: ['/images/home/conf2019/brian.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/brian.jpg'],
             },
           },
           {
@@ -2716,7 +2716,7 @@ function fetchTalks(confId) {
             description: 'Joe Savona',
             url: 'https://www.youtube.com/watch?v=Tl0S7QkxFE4&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=18',
             image: {
-              speakers: ['/images/home/conf2019/joe.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/joe.jpg'],
             },
           },
           {
@@ -2725,7 +2725,7 @@ function fetchTalks(confId) {
             description: 'Cameron Yick',
             url: 'https://www.youtube.com/watch?v=SbreAPNmZOk&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=19',
             image: {
-              speakers: ['/images/home/conf2019/cameron.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/cameron.jpg'],
             },
           },
           {
@@ -2734,7 +2734,7 @@ function fetchTalks(confId) {
             description: 'Jenn Creighton',
             url: 'https://www.youtube.com/watch?v=kqh4lz2Lkzs&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=20',
             image: {
-              speakers: ['/images/home/conf2019/jenn.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/jenn.jpg'],
             },
           },
           {
@@ -2743,7 +2743,7 @@ function fetchTalks(confId) {
             description: 'Alexandra Holachek',
             url: 'https://www.youtube.com/watch?v=laPsceJ4tTY&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=21',
             image: {
-              speakers: ['/images/home/conf2019/alexandra.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/alexandra.jpg'],
             },
           },
           {
@@ -2753,7 +2753,7 @@ function fetchTalks(confId) {
             description: 'Luca Damasco',
             url: 'https://www.youtube.com/watch?v=laPsceJ4tTY&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=21',
             image: {
-              speakers: ['/images/home/conf2019/luca.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/luca.jpg'],
             },
           },
           {
@@ -2762,7 +2762,7 @@ function fetchTalks(confId) {
             description: 'Jed Watson',
             url: 'https://www.youtube.com/watch?v=yS0jUnmBujE&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=25',
             image: {
-              speakers: ['/images/home/conf2019/jed.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/jed.jpg'],
             },
           },
           {
@@ -2771,7 +2771,7 @@ function fetchTalks(confId) {
             description: 'Lizzie Salita',
             url: 'https://www.youtube.com/watch?v=CVfXICcNfHE&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=26',
             image: {
-              speakers: ['/images/home/conf2019/lizzie.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/lizzie.jpg'],
             },
           },
           {
@@ -2780,7 +2780,7 @@ function fetchTalks(confId) {
             description: 'Alex Anderson',
             url: 'https://www.youtube.com/watch?v=aV0uOPWHKt4&list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh&index=27',
             image: {
-              speakers: ['/images/home/conf2019/alex.jpg'],
+              speakers: ['/ru.react.doc/images/home/conf2019/alex.jpg'],
             },
           },
         ]);
