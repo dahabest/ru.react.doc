@@ -5,15 +5,11 @@
 /**
  * @type {import('next').NextConfig}
  **/
-//const isProd = process.env.NODE_ENV === 'production'; // temp
 
 // http://localhost:3000/ru.react.doc/learn/describing-the-ui/
-
 // https://dahabest.github.io/ru.react.doc
 
-//const isProd = false; // temp
-const isProd = process.env.NODE_ENV === 'production'; // temp
-//const isProd = false;
+const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   output: 'export',

@@ -118,27 +118,27 @@
           "path": "/learn/responding-to-events"
         },
         {
-          "title": "State: A Component's Memory",
+          "title": "Состояние: Память Компонента",
           "path": "/learn/state-a-components-memory"
         },
         {
-          "title": "Render and Commit",
+          "title": "Рендеринг и Фиксация",
           "path": "/learn/render-and-commit"
         },
         {
-          "title": "State as a Snapshot",
+          "title": "Состояние Как Снимок",
           "path": "/learn/state-as-a-snapshot"
         },
         {
-          "title": "Queueing a Series of State Updates",
+          "title": "Очередь серии обновлений состояния",
           "path": "/learn/queueing-a-series-of-state-updates"
         },
         {
-          "title": "Updating Objects in State",
+          "title": "Обновление объектов в состоянии",
           "path": "/learn/updating-objects-in-state"
         },
         {
-          "title": "Updating Arrays in State",
+          "title": "Обновление массивов в состоянии",
           "path": "/learn/updating-arrays-in-state"
         }
       ]
