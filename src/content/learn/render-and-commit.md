@@ -265,7 +265,7 @@ The default behavior of rendering all components nested within the updated compo
 
 </DeepDive>
 
-## Step 3: React commits changes to the DOM {/*step-3-react-commits-changes-to-the-dom*/}
+## Шаг 3: React фиксирует изменения в DOM {/*step-3-react-commits-changes-to-the-dom*/}
 
 После рендеринга (вызова) ваших компонентов React изменяет DOM.
 

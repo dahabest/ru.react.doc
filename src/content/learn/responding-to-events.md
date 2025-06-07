@@ -34,7 +34,7 @@ React lets you add *event handlers* to your JSX. Event handlers are your own fun
 
 </YouWillLearn>
 
-## Adding event handlers {/*adding-event-handlers*/}
+##  Добавление обработчиков событий {/*adding-event-handlers*/}
 
 Чтобы добавить обработчик событий, сначала определите функцию, а затем [передайте ее в качестве свойства](/learn/passing-props-to-a-component) в соответствующий JSX-тег. Например, здесь находится кнопка, которая пока ничего не делает:
 
@@ -101,9 +101,9 @@ button { margin-right: 10px; }
 
 </Sandpack>
 
-Вы определили функцию `handleClick`, а затем [передали ее в качестве свойства](/learn/passing-props-to-a-component) в `<button>`.  `handleClick` - это ** обработчик событий.** Функции обработчика событий:
+Вы определили функцию `handleClick`, а затем [передали ее в качестве свойства](/learn/passing-props-to-a-component) в `<button>`.  `handleClick` - это **обработчик событий.** Функции обработчика событий:
 
-* Обычно определяются *внутри ваших компонентов.
+* Обычно определяются _внутри_ ваших компонентов.
 * Имеют имена, начинающиеся с `handle`, за которым следует имя события.
 
 По традиции принято называть обработчики событий `handle`, за которым следует имя события. Часто можно встретить `onClick={handleClick}`, `onMouseEnter={handleMouseEnter}` и так далее.
@@ -245,9 +245,9 @@ In both cases, what you want to pass is a function:
 
 </Pitfall>
 
-### Reading props in event handlers {/*reading-props-in-event-handlers*/}
+### Чтение пропсов в обработчиках событий {/*reading-props-in-event-handlers*/}
 
-Поскольку обработчики событий объявляются внутри компонента, они имеют доступ к его реквизитам. Здесь показана кнопка, которая при нажатии выводит оповещение с реквизитом `message`:
+Поскольку обработчики событий объявляются внутри компонента, они имеют доступ к его параметрам. Здесь показана кнопка, которая при нажатии выводит оповещение с параметром `message`:
 
 
 <details>
@@ -300,9 +300,9 @@ This lets these two buttons show different messages. Try changing the messages p
 
 </details>
 
-### Passing event handlers as props {/*passing-event-handlers-as-props*/}
+### Передача обработчиков событий в качестве пропсов {/*passing-event-handlers-as-props*/}
 
-Часто требуется, чтобы родительский компонент указывал обработчик дочернего события. Рассмотрим кнопки: в зависимости от того, где вы используете компонент `Button`, вы можете захотеть выполнить разные функции - возможно, одна воспроизводит фильм, а другая загружает изображение.
+Часто требуется, чтобы родительский компонент указывал дочерний обработчик события. Рассмотрим кнопки: в зависимости от того, где вы используете компонент `Button`, вы можете захотеть выполнить разные функции - возможно, одна воспроизводит фильм, а другая загружает изображение.
 
 Для этого в качестве обработчика события передайте компоненту свойство, полученное от родителя, следующим образом:
 
@@ -370,7 +370,7 @@ button { margin-right: 10px; }
 - `PlayButton` передает `handlePlayClick` в качестве свойства `onClick` для `Button` внутри.
 - `UploadButton` передает `() => alert('Uploading!')` в качестве свойства `onClick` для `Button` внутри.
 
-Наконец, ваш компонент `Button` принимает свойство `onClick`. Он передает это свойство непосредственно встроенному браузеру `<button>` с `onClick={onClick}`. Это указывает React на вызов переданной функции по щелчку.
+Наконец, ваш компонент `Button` принимает свойство `onClick`. Он передает это свойство непосредственно встроенному браузерному `<button>` с `onClick={onClick}`. Это указывает React на вызов переданной функции по щелчку.
 
 Если вы используете [систему проектирования](https://uxdesign.cc/everything-you-need-to-know-about-design-systems-54b109851969), то обычно такие компоненты, как кнопки, содержат стилистику, но не указывают поведение. Вместо этого такие компоненты, как `PlayButton` и `UploadButton`, передают обработчики событий вниз.
 
@@ -389,7 +389,7 @@ If you use a [design system](https://uxdesign.cc/everything-you-need-to-know-abo
 
 </details>
 
-### Naming event handler props {/*naming-event-handler-props*/}
+### Именование свойств обработчика событий {/*naming-event-handler-props*/}
 
 Встроенные компоненты, такие как `<button>` и `<div>`, поддерживают только [имена событий браузера](/reference/react-dom/components/common#common-props), например `onClick`. Однако при создании собственных компонентов вы можете называть реквизиты обработчиков событий как угодно.
 
@@ -520,7 +520,7 @@ Make sure that you use the appropriate HTML tags for your event handlers. For ex
 
 </Note>
 
-## Event propagation {/*event-propagation*/}
+## Распространение событий {/*event-propagation*/}
 
 Обработчики событий также будут улавливать события от всех дочерних компонентов, которые могут быть у вашего компонента. Мы говорим, что событие "бурлит" или "распространяется" вверх по дереву: оно начинается с того места, где произошло событие, и затем поднимается вверх по дереву.
 
@@ -591,7 +591,7 @@ All events propagate in React except `onScroll`, which only works on the JSX tag
 
 </Pitfall>
 
-### Stopping propagation {/*stopping-propagation*/}
+### Остановка распространения {/*stopping-propagation*/}
 
 Обработчики событий получают объект **event** в качестве единственного аргумента. По традиции он обычно называется `e`, что означает "событие". Вы можете использовать этот объект для чтения информации о событии.
 
@@ -679,7 +679,7 @@ As a result of `e.stopPropagation()`, clicking on the buttons now only shows a s
 
 <DeepDive>
 
-#### Capture phase events {/*capture-phase-events*/}
+#### Перехват фазовых событий {/*capture-phase-events*/}
 
 В редких случаях вам может понадобиться перехватывать все события на дочерних элементах, даже если они прекратили распространение. Например, вы хотите регистрировать каждый клик в аналитике, независимо от логики распространения. Вы можете сделать это, добавив `Capture` в конце имени события:
 
@@ -725,7 +725,7 @@ Capture events are useful for code like routers or analytics, but you probably w
 
 </DeepDive>
 
-### Passing handlers as alternative to propagation {/*passing-handlers-as-alternative-to-propagation*/}
+### Передача обработчиков в качестве альтернативы распространению {/*passing-handlers-as-alternative-to-propagation*/}
 
 Обратите внимание, как этот обработчик щелчка запускает строку кода _а затем_ вызывает свойство `onClick`, переданное родителем:
 
@@ -773,7 +773,7 @@ If you rely on propagation and it's difficult to trace which handlers execute an
 
 </details>
 
-### Preventing default behavior {/*preventing-default-behavior*/}
+### Предотвращение поведения по умолчанию {/*preventing-default-behavior*/}
 
 Некоторые события браузера имеют поведение по умолчанию, связанное с ними. Например, событие `<form>` submit, которое происходит при нажатии на кнопку внутри него, по умолчанию перезагружает всю страницу:
 
@@ -854,7 +854,7 @@ Don't confuse `e.stopPropagation()` and `e.preventDefault()`. They are both usef
 
 </details>
 
-## Can event handlers have side effects? {/*can-event-handlers-have-side-effects*/}
+## Могут ли обработчики событий иметь побочные эффекты? {/*can-event-handlers-have-side-effects*/}
 
 Конечно! Обработчики событий - лучшее место для побочных эффектов.
 
@@ -906,7 +906,7 @@ Unlike rendering functions, event handlers don't need to be [pure](/learn/keepin
 
 <Challenges>
 
-#### Fix an event handler {/*fix-an-event-handler*/}
+#### Исправить обработчик событий {/*fix-an-event-handler*/}
 
 Щелчок на этой кнопке должен переключить фон страницы с белого на черный. Однако при нажатии на нее ничего не происходит. Устраните эту проблему. (Не беспокойтесь о логике внутри `handleClick` - эта часть в порядке).
 
@@ -1013,7 +1013,7 @@ export default function LightSwitch() {
 
 </Solution>
 
-#### Wire up the events {/*wire-up-the-events*/}
+#### Подключите события {/*wire-up-the-events*/}
 
 Этот компонент `ColorSwitch` отображает кнопку. Она должна менять цвет страницы. Подключите его к обработчику события `onChangeColor`, которое он получает от родителя, чтобы при нажатии на кнопку цвет менялся.
 
