@@ -38,7 +38,7 @@ State variables might look like regular JavaScript variables that you can read a
 
 ## Установка состояния запускает рендеринг {/*setting-state-triggers-renders*/}
 
-Вы можете думать, что ваш пользовательский интерфейс изменяется непосредственно в ответ на событие пользователя, например на клик. В React все работает немного иначе, чем в этой ментальной модели. На предыдущей странице вы видели, что [установка состояния запрашивает повторный рендеринг](/learn/render-and-commit#step-1-trigger-a-render) в React. Это означает, что для того, чтобы интерфейс отреагировал на событие, вам нужно *обновить состояние*.
+Вы можете думать, что ваш пользовательский интерфейс изменяется непосредственно в ответ на событие пользователя, например на клик. В React все работает немного иначе, чем в этом мысленном представлении. На предыдущей странице вы видели, что [установка состояния запрашивает повторный рендеринг](/learn/render-and-commit#step-1-trigger-a-render) в React. Это означает, что для того, чтобы интерфейс отреагировал на событие, вам нужно *обновить состояние*.
 
 В этом примере, когда вы нажимаете кнопку "отправить", `setIsSent(true)` сообщает React о необходимости повторного рендеринга пользовательского интерфейса:
 
@@ -115,7 +115,7 @@ Let's take a closer look at the relationship between state and rendering.
 
 ## Рендеринг делает моментальный снимок во времени {/*rendering-takes-a-snapshot-in-time*/}
 
-["Рендеринг"](/learn/render-and-commit#step-2-react-renders-your-components) означает, что React вызывает ваш компонент, который является функцией. JSX, который вы возвращаете из этой функции, - это как снимок пользовательского интерфейса во времени. Его реквизиты, обработчики событий и локальные переменные были рассчитаны **используя его состояние на момент рендеринга*.
+["Рендеринг"](/learn/render-and-commit#step-2-react-renders-your-components) означает, что React вызывает ваш компонент, который является функцией. JSX, который вы возвращаете из этой функции, - это как снимок пользовательского интерфейса во времени. Его пропсы, обработчики событий и локальные переменные были рассчитаны **используя его состояние на момент рендеринга**.
 
 В отличие от фотографии или кадра фильма, возвращаемый вами "снимок" пользовательского интерфейса является интерактивным. Он включает в себя логику, например обработчики событий, которые определяют, что происходит в ответ на входные данные. React обновляет экран в соответствии с этим снимком и подключает обработчики событий. В результате нажатие на кнопку вызовет обработчик клика из вашего JSX.
 
@@ -131,7 +131,7 @@ Let's take a closer look at the relationship between state and rendering.
     <Illustration caption="Обновление дерева DOM" src="/ru.react.doc/images/docs/illustrations/i_render3.png" />
 </IllustrationBlock>
 
-Как память компонента, состояние не похоже на обычную переменную, которая исчезает после возврата функции. Состояние фактически "живет" в самом React - как будто на полке! - вне вашей функции. Когда React вызывает ваш компонент, он дает вам снимок состояния для этого конкретного рендера. Ваш компонент возвращает снимок пользовательского интерфейса со свежим набором реквизитов и обработчиков событий в своем JSX, все вычисленные **используя значения состояния из этого рендера!**.
+Как память компонента, состояние не похоже на обычную переменную, которая исчезает после возврата функции. Состояние фактически "живет" в самом React - как будто на полке! - вне вашей функции. Когда React вызывает ваш компонент, он дает вам снимок состояния для этого конкретного рендера. Ваш компонент возвращает снимок пользовательского интерфейса со свежим набором реквизитов и обработчиков событий в своем JSX, все вычисленные **используя значения состояния из этого рендера!**
 
 <IllustrationBlock sequential>
   <Illustration caption="Вы говорите React обновить состояние" src="/ru.react.doc/images/docs/illustrations/i_state-snapshot1.png" />
@@ -148,7 +148,7 @@ Let's take a closer look at the relationship between state and rendering.
 <summary><small>(eng)</small></summary>
 
 <b>Rendering takes a snapshot in time :</b>
-["Rendering"](/learn/render-and-commit#step-2-react-renders-your-components) means that React is calling your component, which is a function. The JSX you return from that function is like a snapshot of the UI in time. Its props, event handlers, and local variables were all calculated **using its state at the time of the render.**
+["Rendering"](/learn/render-and-commit#step-2-react-renders-your-components) means that React is calling your component, which is a function. The JSX you return from that function is like a snapshot of the UI in time. Its props, event handlers, and local variables were all calculated **using its state at the time of the render**
 
 Unlike a photograph or a movie frame, the UI "snapshot" you return is interactive. It includes logic like event handlers that specify what happens in response to inputs. React updates the screen to match this snapshot and connects the event handlers. As a result, pressing a button will trigger the click handler from your JSX.
 
@@ -227,7 +227,7 @@ h1 { display: inline-block; margin: 10px; width: 30px; text-align: center; }
 3. `setNumber(number + 1)`: `number` - это `0`, поэтому `setNumber(0 + 1)`.
     - React готовится изменить `число` на `1` при следующем рендере.
 
-Несмотря на то, что вы вызвали `setNumber(number + 1)` три раза, в обработчике события *этого рендера `number` всегда `0`, поэтому вы установили состояние `1` три раза. Вот почему после завершения обработчика события React повторно рендерит компонент с `number`, равным `1`, а не `3`.
+Несмотря на то, что вы вызвали `setNumber(number + 1)` три раза, в обработчике события *этого рендера* `number` всегда `0`, поэтому вы установили состояние `1` три раза. Вот почему после завершения обработчика события React повторно рендерит компонент с `number`, равным `1`, а не `3`.
 
 Вы также можете представить себе это, мысленно заменив переменные состояния их значениями в коде. Поскольку переменная состояния `number` равна `0` для *этого рендера*, обработчик его события выглядит следующим образом:
 
@@ -487,7 +487,7 @@ label, textarea { margin-bottom: 10px; display: block; }
 
 **React сохраняет значения состояния "фиксированными" в обработчиках событий одного рендера.** Вам не нужно беспокоиться о том, изменилось ли состояние во время выполнения кода.
 
-Но что, если вы хотите прочитать последнее состояние перед повторным рендерингом? Для этого нужно использовать функцию [state updater] (/learn/queueing-a-series-of-state-updates), о которой мы расскажем на следующей странице!
+Но что, если вы хотите прочитать последнее состояние перед повторным рендерингом? Для этого нужно использовать функцию [state updater](/learn/queueing-a-series-of-state-updates), о которой мы расскажем на следующей странице!
 
 
 <details>
